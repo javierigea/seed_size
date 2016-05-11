@@ -1,0 +1,7 @@
+.Rproj.user
+.Rhistory
+.RData
+/raw_data/
+/output/
+seed_size.Rproj
+.DS_Store
