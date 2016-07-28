@@ -44,7 +44,7 @@ analyse_BAMM_convergence('./raw_data/BAMM_results/mcmc_out_divPhyndr25_50m1clust
 dev.off()
 pdf('./output/plots/traitevolution_mcmc.pdf',paper='a4r')
 par(mfrow=c(2,2))
-analyse_BAMM_convergence('./raw_data/BAMM_results/mcmc_out_traitPhyndr25_2.txt',0.2)
+analyse_BAMM_convergence('./raw_data/BAMM_results/mcmc_out_traitPhyndr25_2106_2.txt',0.2)
 dev.off()
 pdf('./output/plots/div_priorposterior.pdf',paper='a4r')
 plotPrior('./raw_data/BAMM_results/mcmc_out_divPhyndr25_50m1cluster.txt',25,0.2)
@@ -57,7 +57,8 @@ dev.off()
 source('./R/BAMM_analysis.R')
 source('./R/plots.R')
 analyse_BAMM_output('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_divPhyndr25_50m1cluster.txt',traitdata='./output/tables/BAMMPhyndr_GenusSeed_trait_data.txt',burnin=0.2,mode='diversification',name='seed')
-analyse_BAMM_output('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_traitPhyndr25_2.txt', traitdata='./output/tables/BAMMPhyndr_GenusSeed_trait_data.txt',burnin=0.2,mode='trait',name='seed')
+analyse_BAMM_output('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_traitPhyndr25_2106_2.txt', traitdata='./output/tables/BAMMPhyndr_GenusSeed_trait_data.txt',burnin=0.2,mode='trait',name='seed')
+
 #write table with diversification and trait rates 
 BAMMdiversification<-read.table('./output/tables/BAMM_diversification_rates_seed.txt',header=T,sep='\t')
 BAMMtrait<-read.table('./output/tables/BAMM_trait_rates_seed.txt',header=T,sep='\t')
@@ -70,7 +71,7 @@ write.table(BAMMdivtrait,file='./output/tables/BAMMdivtrait_rates_seed.txt',sep=
 rate_scaled_trees('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_divPhyndr25_50m1cluster.txt',burnin=0.2,mode='diversification',parameter='speciation')
 rate_scaled_trees('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_divPhyndr25_50m1cluster.txt',burnin=0.2,mode='diversification',parameter='extinction')
 rate_scaled_trees('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_divPhyndr25_50m1cluster.txt',burnin=0.2,mode='diversification',parameter='ndr')
-rate_scaled_trees('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_divPhyndr25_50m1cluster.txt',burnin=0.2,mode='trait',parameter='trait')
+rate_scaled_trees('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_traitPhyndr25_2106_2.txt',burnin=0.2,mode='trait',parameter='trait')
 
 #run STRAPP, get tables and plots
 source('./R/STRAPP_plot.R')
