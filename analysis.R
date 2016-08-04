@@ -46,12 +46,17 @@ pdf('./output/plots/traitevolution_mcmc.pdf',paper='a4r')
 par(mfrow=c(2,2))
 analyse_BAMM_convergence('./raw_data/BAMM_results/mcmc_out_traitPhyndr25_2106_2.txt',0.2)
 dev.off()
-pdf('./output/plots/div_priorposterior.pdf',paper='a4r')
-plotPrior('./raw_data/BAMM_results/mcmc_out_divPhyndr25_50m1cluster.txt',25,0.2)
+#plot prior vs posterior
+pdf('./output/plots/trait_priorposterior_div_25.pdf',paper='a4r')
+plotPriormod('./raw_data/BAMM_results/mcmc_out_divPhyndr25_50m1cluster.txt',25,0.2)
 dev.off()
-pdf('./output/plots/trait_priorposterior.pdf',paper='a4r')
-plotPrior('./raw_data/BAMM_results/mcmc_out_traitPhyndr25_2.txt',10,0.2)
+pdf('./output/plots/trait_priorposterior_div_25.pdf',paper='a4r')
+plotPriormod('./raw_data/BAMM_results/mcmc_out_traitPhyndr25_2106_2.txt',25,0.2)
 dev.off()
+
+
+
+
 
 #analyse BAMM diversification and trait evolution
 source('./R/BAMM_analysis.R')
