@@ -116,6 +116,12 @@ run_seedlifecycleCvalue_STRAPP('./output/trees/QianSeedPhyndr_nooutliers_GenusTr
 source('./R/typeI_error_strapp.R')
 typeIerror_strapp('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_divPhyndr25_50m1cluster.txt',burnin=0.2,name = 'seed')
 
+#curated dataset of genera analysis,outputs pgls results with epsilon = 0.5
+#this runs the analysis for monophyletic genera in Zanne tree with seed size data and with minimum prob of recovering true root = 0.7
+source('./R/genus_level_no_constraints.R')
+#this runs the analysis for monophyletic genera with 3 or more sp with seed size data in Zanne tree and with minimum prob of recovering true root = 0.7
+source('./R/genus_level_constrained.R')
+
 
 ####################get crude versions of plots (to be edited/combined later)
 source('./R/plots.R')

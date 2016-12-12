@@ -5,3 +5,6 @@
 /output/
 seed_size.Rproj
 .DS_Store
+family_tree_310.tree
+*.pdf
+/old_output/
