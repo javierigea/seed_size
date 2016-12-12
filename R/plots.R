@@ -258,6 +258,82 @@ plot_typeIerror<-function(simfile){
   dev.off()
 }
 
+#########plot the correlation across time slices with points
+###size of points proportional to size of clades (size of clades stored in ./output/tables/clades_size.txt)
+###colour of points indicates significance
+plot_correlations<-function(folder,pattern,name,cladesizefile){
+  cladesize<-read.table(cladesizefile,header=T)
+  pgls.files<-list.files(folder,pattern=pattern)
+  time.slices<-unname(sapply(pgls.files,function(x)sub(x,pattern='_[0-9]+size_.*',replacement='')))
+  pgls.results<-lapply(pgls.files,function(x) {table<-read.table(paste(folder,x,sep=''),header=T,sep='\t');table<-as.vector(as.matrix(table[,-1]));table<-c(sub(x,pattern='_[0-9]+size_.*',replacement=''),table)})
+  pgls.results <- data.frame(matrix(unlist(pgls.results), nrow=length(pgls.results), byrow=T))
+  colnames(pgls.results)<-c('Slice','Slope.seed','Slope.seedrate','pvalue.seed','pvalue.seedrate')
+  pgls.results <- data.frame(lapply(pgls.results, as.character), stringsAsFactors=FALSE)
+  pgls.results$Slope.seed<-as.numeric(pgls.results$Slope.seed)
+  pgls.results$Slope.seedrate<-as.numeric(pgls.results$Slope.seedrate)
+  pgls.results$pvalue.seed<-as.numeric(pgls.results$pvalue.seed)
+  pgls.results$pvalue.seedrate<-as.numeric(pgls.results$pvalue.seedrate)
+  pgls.results$Slice<-sub(pgls.results$Slice,pattern='_0.3',replacement='')
+  time.slice.order<-c('0_2','2_4','4_6','6_8','8_10','10_12','12_14','14_16','16_18','18_20')
+  pgls.results<-merge(pgls.results,cladesize)
+  pgls.results<-pgls.results[match(time.slice.order, pgls.results$Slice),]
+  write.table(pgls.results,'./timeslices_0.3_3size_clades_MS_lambda_pgls_results.txt',sep='\t',quote=F,row.names=F)  
+  slice.table<-pgls.results
+  #for seed size
+  slice.table$point.size<-0
+  if (nrow(slice.table[slice.table$pvalue.seed<0.05,])>0){
+    slice.table[slice.table$Nclades<30,]$point.size<-1
+  }
+  if (nrow(slice.table[slice.table$pvalue.seed<0.05,])>0){
+    slice.table[slice.table$Nclades>=30&slice.table$Nclades<50,]$point.size<-2
+  }
+  if (nrow(slice.table[slice.table$pvalue.seed<0.05,])>0){
+    slice.table[slice.table$Nclades>=50,]$point.size<-3
+  }
+  
+  slice.table$point.colour<-'light grey'
+  if (nrow(slice.table[slice.table$pvalue.seed<0.05,])>0){
+    slice.table[slice.table$pvalue.seed<0.05,]$point.colour<-'black'
+  }
+  if (nrow(slice.table[slice.table$pvalue.seed>0.05&slice.table$pvalue.seed<0.1,])>0){
+    slice.table[slice.table$pvalue.seed>0.05&slice.table$pvalue.seed<0.1,]$point.colour<-'dark grey'
+  }
+  if (nrow(slice.table[slice.table$pvalue.seed>0.1,])>0){
+    slice.table[slice.table$pvalue.seed>0.1,]$point.colour<-'white'
+  }
+  
+  pdf(paste('./output/plots/',name,'.pdf',sep=''))
+  plot(0,type='n',axes=FALSE,ann=FALSE)
+  symbols(seq(from=1,to=19,by=2),slice.table$Slope.seed,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(-0.3,0.3),main='speciation~seed.size.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1,xaxs='i')
+  axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
+  plot(0,type='n',axes=FALSE,ann=FALSE)
+  symbols(seq(from=1,to=19,by=2),slice.table$Slope.seed,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(-0.3,0.3),main='speciation~seed.size.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1,xaxs='i')
+  axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
+  legend('topleft',c('< 30','30 - 50','> 50'),pch=21,col='black',pt.cex=c(5/3,5/2,5),bty='n',cex=1.5)
+  legend('center',c('< 0.05','0.05 - 0.1','> 0.1'),pch=19,col=c('black','dark grey','white'),pt.cex=5/2,bty='n',cex=1.5)
+  slice.table$point.colour<-'light grey'
+  slice.table$point.colour<-'light grey'
+  if (nrow(slice.table[slice.table$pvalue.seedrate<0.05,])>0){
+    slice.table[slice.table$pvalue.seedrate<0.05,]$point.colour<-'black'
+  }
+  if (nrow(slice.table[slice.table$pvalue.seedrate>0.05&slice.table$pvalue.seedrate<0.1,])>0){
+    slice.table[slice.table$pvalue.seedrate>0.05&slice.table$pvalue.seedrate<0.1,]$point.colour<-'dark grey'
+  }
+  if (nrow(slice.table[slice.table$pvalue.seedrate>0.1,])>0){
+    slice.table[slice.table$pvalue.seedrate>0.1,]$point.colour<-'white'
+  }
+  plot(0,type='n',axes=FALSE,ann=FALSE)
+  symbols(seq(from=1,to=19,by=2),slice.table$Slope.seedrate,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(0,1),main='speciation~seed.size.rate.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1)
+  axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
+  plot(0,type='n',axes=FALSE,ann=FALSE)
+  symbols(seq(from=1,to=19,by=2),slice.table$Slope.seedrate,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(0,1),main='speciation~seed.size.rate.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1)
+  axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
+  legend('topleft',c('< 30','30 - 50','> 50'),pch=21,col='black',pt.cex=c(5/3,5/2,5),bty='n',cex=1.5)
+  legend('topright',c('< 0.05','0.05 - 0.1','> 0.1'),pch=19,col=c('black','dark grey','white'),pt.cex=5/2,bty='n',cex=1.5)
+  dev.off()
+}
+
+
 ####plot rate-scaled tree with branches coloured by rates of trait evolution
 #parameter tree: lambda, mu or div  tree (the tree file that will determine branch lengths)
 #colourtee: rate of evolution tree (the tree file that will determine branch colours)

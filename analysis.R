@@ -154,6 +154,11 @@ plot_strapp_samples_from_file('./output/tables/strapp_all_lambda_seedrate.txt','
 plot_strapp_samples_from_file('./output/tables/strapp_all_mu_seedrate.txt','mu','seedrate','./output/tables/BAMMdivtrait_rates_seed.txt')
 plot_strapp_samples_from_file('./output/tables/strapp_all_div_seedrate.txt','div','seedrate','./output/tables/BAMMdivtrait_rates_seed.txt')
 
+#Figure 3 (correlations across time slices)
+plot_correlations(folder='./output/plots/clade_analyses/',pattern='*_pgls_MSlambda_results.txt','MSlambda_correlations',cladesizefile='./output/tables/clades_size.txt')
+plot_correlations(folder='./output/plots/clade_analyses/',pattern='*_pgls_MScongenerics_results.txt','MScongenerics_correlations',cladesizefile='./output/tables/clades_congenerics_size.txt')
+plot_correlations(folder='./output/plots/clade_analyses/',pattern='*_pgls_lambda_results.txt','RPANDAlambda_correlations',cladesizefile='./output/tables/clades_size.txt')
+
 #Figure S1: posterior for number of rate shifts
 plot_number_shifts_BAMM('./raw_data/BAMM_results/mcmc_out_divPhyndr25_50m1cluster.txt',0.2,'diversification')
 plot_number_shifts_BAMM('./raw_data/BAMM_results/mcmc_out_traitPhyndr25_2.txt',0.2,'trait')
@@ -179,6 +184,7 @@ plot_typeIerror('./output/tables/typeIerror_sims_1803.txt')
 #Figure S9: Boxplot of seed mass in strictly annuals and perennials (+PGLS)
 source('./R/lifecycleCvalue_analysis.R')
 annual_vs_perennial('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./output/tables/BAMMPhyndr_GenusSeed_trait_data.txt','./output/tables/KewCvalue_GenusLevel.txt','./output/tables/KewLifeCycle_GenusLevel.txt')
+
 
 
 
