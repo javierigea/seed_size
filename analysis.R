@@ -18,6 +18,7 @@ dir.create('./output/')
 dir.create('./output/tables/')
 dir.create('./output/trees/')
 dir.create('./output/plots/')
+dir.create('./output/plots/clade_analyses/')
 dir.create('./output/BAMM_results/')
 
 #process seed mass data from Kew Seed Information Database
@@ -116,12 +117,29 @@ run_seedlifecycleCvalue_STRAPP('./output/trees/QianSeedPhyndr_nooutliers_GenusTr
 source('./R/typeI_error_strapp.R')
 typeIerror_strapp('./output/trees/QianSeedPhyndr_nooutliers_GenusTree.tree','./raw_data/BAMM_results/event_data_divPhyndr25_50m1cluster.txt',burnin=0.2,name = 'seed')
 
-#curated dataset of genera analysis,outputs pgls results with epsilon = 0.5
+#######################curated dataset of genera analysis,outputs pgls results with epsilon = 0.5
 #this runs the analysis for monophyletic genera in Zanne tree with seed size data and with minimum prob of recovering true root = 0.7
 source('./R/genus_level_no_constraints.R')
 #this runs the analysis for monophyletic genera with 3 or more sp with seed size data in Zanne tree and with minimum prob of recovering true root = 0.7
 source('./R/genus_level_constrained.R')
 
+#######################run clade based analyses
+####this runs the clade based analyses and generates crude versions of plots (should be combined later)
+#run this first to prepare the dataset
+source('./R/clade_based_analyses.R')
+
+#this runs the clade analysis for congeneric species only
+for (i in seq(from=0,to=18,by=2)){
+  run_clades_MSlambda_congenerics_pgls(minage=i,maxage=i+2,mincladesize=3,sampling=0.3,ncores=2,table=Kew.TaxLookUp.Qiandropped)
+}
+#this runs the clade analysis with Magallon & Sanderson method
+for (i in seq(from=0,to=18,by=2)){
+  run_clades_MSlambda_pgls(minage=i,maxage=i+2,mincladesize=3,sampling=0.3,ncores=2,table=Kew.TaxLookUp.Qiandropped)
+}
+#this runs the clade analysis with RPANDA method
+for (i in seq(from=0,to=18,by=2)){
+  run_clades_RPANDA_pgls(minage=i,maxage=i+2,mincladesize=3,sampling=0.3,ncores=2,table=Kew.TaxLookUp.Qiandropped)
+}
 
 ####################get crude versions of plots (to be edited/combined later)
 source('./R/plots.R')
