@@ -1,4 +1,3 @@
-library(BAMMtools)
 library(coda)
 library(ape)
 library(mvtnorm)
@@ -95,25 +94,25 @@ plot_strapp_samples_from_file<-function(correlationfile,parameter,name,tablefile
     max.x<-max(c(table$mean.beta.rates))
     if(parameter=='lambda'){
       plot(c(log10(min.x),log10(max.x)),c(log10(min.y),log10(max.y)),xlab='rate of seed mass change',ylab='speciation rate (lineages myr-1)',xaxt='n',yaxt='n',type='n')
-      ticks.x<-seq(-3, 0, by = 1)
+      ticks.x<-seq(-3, 1, by = 1)
       axis(1, at = ticks.x, labels=10^(ticks.x), las=1)
-      ticks.y<-seq(-3, 1, by = 1)
+      ticks.y<-seq(-2, 1, by = 1)
       axis(2, at = ticks.y, labels=10^(ticks.y), las=1)
       col.lines<-rgb(214,142,148,maxColorValue = 255)
     }
     if(parameter=='mu'){
       plot(c(log10(min.x),log10(max.x)),c(log10(min.y),log10(max.y)),xlab='rate of seed mass change',ylab='extinction rate (lineages myr-1)',xaxt='n',yaxt='n',type='n')
-      ticks.x<-seq(-3, 0, by = 1)
+      ticks.x<-seq(-3, 1, by = 1)
       axis(1, at = ticks.x, labels=10^(ticks.x), las=1)
-      ticks.y<-seq(-3, 1, by = 1)
+      ticks.y<-seq(-2, 1, by = 1)
       axis(2, at = ticks.y, labels=10^(ticks.y), las=1)
       col.lines<-rgb(150,192,231,maxColorValue = 255)
     }
     if(parameter=='div'){
       plot(c(log10(min.x),log10(max.x)),c(log10(min.y),log10(max.y)),xlab='rate of seed mass change',ylab='diversification rate (lineages myr-1)',xaxt='n',yaxt='n',type='n')
-      ticks.x<-seq(-3, 0, by = 1)
+      ticks.x<-seq(-3, 1, by = 1)
       axis(1, at = ticks.x, labels=10^(ticks.x), las=1)
-      ticks.y<-seq(-3, 1, by = 1)
+      ticks.y<-seq(-2, 1, by = 1)
       axis(2, at = ticks.y, labels=10^(ticks.y), las=1)
       col.lines<-rgb(216,198,222,maxColorValue = 255)
     }
@@ -213,20 +212,20 @@ plot_famtree_sampling<-function(treefile,tablefile){
   tree<-read.tree(treefile)
   tree$tip.label<-as.character(tree$tip.label)
   table<-read.table(tablefile,sep='\t',header=T)
-  table<-table[match(tree$tip.label,table$Genus),]
+  table<-table[match(tree$tip.label,table$species),]
   #check the order is correct
-  identical(as.character(table$Genus),as.character(tree$tip.label))
+  identical(as.character(table$species),as.character(tree$tip.label))
   #get one tip per family
-  tree$tip.label<-as.character(paste(table$family,table$Genus,sep='_'))
+  tree$tip.label<-as.character(paste(table$family,table$species,sep='_'))
   family<-unique(sapply(strsplit(as.character(tree$tip.label),'_'),function(x) x[1]))
   family2<-sapply(family, function(x) x<- paste(x,'_',sep=''))
   ii<-sapply(family,function(x,y) grep(x,y,fixed=TRUE)[1],y=tree$tip.label)
   famtree<-drop.tip(tree,setdiff(tree$tip.label,tree$tip.label[ii]))
   #remove genus name from tips
   famtree$tip.label<-sapply(strsplit(famtree$tip.label,"_"),function(x) x[1])
-  samplingdf<-data.frame(table$family,table$Sampling_Fraction)
+  samplingdf<-data.frame(table$family,table$family.sampling.fraction)
   samplingdf<-unique(samplingdf)
-  sampling<-samplingdf$table.Sampling_Fraction
+  sampling<-samplingdf$table.family.sampling.fraction
   names(sampling)<-samplingdf$table.family
   #plot the tree+bar
   pdf(pdffile,paper='a4')
@@ -236,7 +235,7 @@ plot_famtree_sampling<-function(treefile,tablefile){
   mtext("(a)", adj = 0.05, padj = -3, cex = 0.9)
   mtext("Millions of Years", side=1, adj = 0.5, padj = 4)
   par(fig=c(0.515,1,0,0.9), new=TRUE)
-  barplot(sampling[famtree$tip.label],horiz=TRUE,width=1,space=0,ylim=c(1,length(famtree$tip.label))-0.5,names="",col = 'red', axes = FALSE, xlab = 'Percentage of \ngenera sampled')
+  barplot(sampling[famtree$tip.label],horiz=TRUE,width=1,space=0,ylim=c(1,length(famtree$tip.label))-0.5,names="",col = 'red', axes = FALSE, xlab = 'Percentage of \nspecies sampled')
   axis(2, at=c(-10,310), labels = c('',''), hadj = -0.5 , las = 2, tick = TRUE, tcl=0)
   axis(4, at=c(-10,310), labels = c('',''), hadj = 1, las = 2, tick =TRUE, tcl=0)
   abline(v=0.5, lty = 2, col='gray80')
@@ -251,7 +250,7 @@ plot_famtree_sampling<-function(treefile,tablefile){
 plot_typeIerror<-function(simfile){
   sims<-read.table(simfile)
   error<-sum(sims$V1<=0.05)/length(sims$V1)
-  h<-hist(sims$V1)
+  h<-hist(sims$V1,breaks = 20)
   h$density<-h$counts/sum(h$counts)
   pdf(file='./output/plots/typeIerror_strapp.pdf',paper='a4')
   plot(h,freq=FALSE,ylim=c(0,1),xaxs='i',yaxs='i',xlab='STRAPP test p-value',ylab='Frequency',las=1,main=paste('p-values of STRAPP with neutral traits (Type I error=',error,')',sep = ''))
@@ -277,18 +276,18 @@ plot_correlations<-function(folder,pattern,name,cladesizefile){
   time.slice.order<-c('0_2','2_4','4_6','6_8','8_10','10_12','12_14','14_16','16_18','18_20')
   pgls.results<-merge(pgls.results,cladesize)
   pgls.results<-pgls.results[match(time.slice.order, pgls.results$Slice),]
-  write.table(pgls.results,'./timeslices_0.3_3size_clades_MS_lambda_pgls_results.txt',sep='\t',quote=F,row.names=F)  
+  write.table(pgls.results,paste('./output/tables/timeslices_0.3_3size_clades_',name,'_results.txt',sep=''),sep='\t',quote=F,row.names=F)  
   slice.table<-pgls.results
   #for seed size
   slice.table$point.size<-0
-  if (nrow(slice.table[slice.table$pvalue.seed<0.05,])>0){
-    slice.table[slice.table$Nclades<30,]$point.size<-1
+  if (nrow(slice.table[slice.table$Nclades<75,])>0){
+    slice.table[(slice.table$Nclades<75),]$point.size<-1
   }
-  if (nrow(slice.table[slice.table$pvalue.seed<0.05,])>0){
-    slice.table[slice.table$Nclades>=30&slice.table$Nclades<50,]$point.size<-2
+  if (nrow(slice.table[slice.table$Nclades>=75&slice.table$Nclades<125,])>0){
+    slice.table[(slice.table$Nclades>=75)&(slice.table$Nclades<125),]$point.size<-2
   }
-  if (nrow(slice.table[slice.table$pvalue.seed<0.05,])>0){
-    slice.table[slice.table$Nclades>=50,]$point.size<-3
+  if (nrow(slice.table[slice.table$Nclades>=125,])>0){
+    slice.table[(slice.table$Nclades>=125),]$point.size<-3
   }
   
   slice.table$point.colour<-'light grey'
@@ -309,7 +308,7 @@ plot_correlations<-function(folder,pattern,name,cladesizefile){
   plot(0,type='n',axes=FALSE,ann=FALSE)
   symbols(seq(from=1,to=19,by=2),slice.table$Slope.seed,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(-0.3,0.3),main='speciation~seed.size.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1,xaxs='i')
   axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
-  legend('topleft',c('< 30','30 - 50','> 50'),pch=21,col='black',pt.cex=c(5/3,5/2,5),bty='n',cex=1.5)
+  legend('topleft',c('< 75','75 - 125','> 125'),pch=21,col='black',pt.cex=c(5/3,5/2,5),bty='n',cex=1.5)
   legend('center',c('< 0.05','0.05 - 0.1','> 0.1'),pch=19,col=c('black','dark grey','white'),pt.cex=5/2,bty='n',cex=1.5)
   slice.table$point.colour<-'light grey'
   slice.table$point.colour<-'light grey'
@@ -328,11 +327,85 @@ plot_correlations<-function(folder,pattern,name,cladesizefile){
   plot(0,type='n',axes=FALSE,ann=FALSE)
   symbols(seq(from=1,to=19,by=2),slice.table$Slope.seedrate,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(0,1),main='speciation~seed.size.rate.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1)
   axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
-  legend('topleft',c('< 30','30 - 50','> 50'),pch=21,col='black',pt.cex=c(5/3,5/2,5),bty='n',cex=1.5)
+  legend('topleft',c('< 75','75 - 125','> 125'),pch=21,col='black',pt.cex=c(5/3,5/2,5),bty='n',cex=1.5)
   legend('topright',c('< 0.05','0.05 - 0.1','> 0.1'),pch=19,col=c('black','dark grey','white'),pt.cex=5/2,bty='n',cex=1.5)
   dev.off()
 }
 
+#########plot the correlation across time slices with points
+###size of points proportional to size of clades (size of clades stored in ./output/tables/clades_size.txt)
+###colour of points indicates significance
+plot_correlations_congenerics<-function(folder,pattern,name,cladesizefile){
+  cladesize<-read.table(cladesizefile,header=T)
+  pgls.files<-list.files(folder,pattern=pattern)
+  time.slices<-unname(sapply(pgls.files,function(x)sub(x,pattern='_[0-9]+size_.*',replacement='')))
+  pgls.results<-lapply(pgls.files,function(x) {table<-read.table(paste(folder,x,sep=''),header=T,sep='\t');table<-as.vector(as.matrix(table[,-1]));table<-c(sub(x,pattern='_[0-9]+size_.*',replacement=''),table)})
+  pgls.results <- data.frame(matrix(unlist(pgls.results), nrow=length(pgls.results), byrow=T))
+  colnames(pgls.results)<-c('Slice','Slope.seed','Slope.seedrate','pvalue.seed','pvalue.seedrate')
+  pgls.results <- data.frame(lapply(pgls.results, as.character), stringsAsFactors=FALSE)
+  pgls.results$Slope.seed<-as.numeric(pgls.results$Slope.seed)
+  pgls.results$Slope.seedrate<-as.numeric(pgls.results$Slope.seedrate)
+  pgls.results$pvalue.seed<-as.numeric(pgls.results$pvalue.seed)
+  pgls.results$pvalue.seedrate<-as.numeric(pgls.results$pvalue.seedrate)
+  pgls.results$Slice<-sub(pgls.results$Slice,pattern='_0.3',replacement='')
+  time.slice.order<-c('0_2','2_4','4_6','6_8','8_10','10_12','12_14','14_16','16_18','18_20')
+  pgls.results<-merge(pgls.results,cladesize)
+  pgls.results<-pgls.results[match(time.slice.order, pgls.results$Slice),]
+  write.table(pgls.results,paste('./output/tables/timeslices_0.3_3size_clades_',name,'_results.txt',sep=''),sep='\t',quote=F,row.names=F)  
+  slice.table<-pgls.results
+  #for seed size
+  slice.table$point.size<-0
+  if (nrow(slice.table[slice.table$Nclades<25,])>0){
+    slice.table[(slice.table$Nclades<25),]$point.size<-1
+  }
+  if (nrow(slice.table[slice.table$Nclades>=25&slice.table$Nclades<50,])>0){
+    slice.table[(slice.table$Nclades>=25)&(slice.table$Nclades<50),]$point.size<-2
+  }
+  if (nrow(slice.table[slice.table$Nclades>=50,])>0){
+    slice.table[(slice.table$Nclades>=50),]$point.size<-3
+  }
+  
+  slice.table$point.colour<-'light grey'
+  if (nrow(slice.table[slice.table$pvalue.seed<0.05,])>0){
+    slice.table[slice.table$pvalue.seed<0.05,]$point.colour<-'black'
+  }
+  if (nrow(slice.table[slice.table$pvalue.seed>0.05&slice.table$pvalue.seed<0.1,])>0){
+    slice.table[slice.table$pvalue.seed>0.05&slice.table$pvalue.seed<0.1,]$point.colour<-'dark grey'
+  }
+  if (nrow(slice.table[slice.table$pvalue.seed>0.1,])>0){
+    slice.table[slice.table$pvalue.seed>0.1,]$point.colour<-'white'
+  }
+  
+  pdf(paste('./output/plots/',name,'.pdf',sep=''))
+  plot(0,type='n',axes=FALSE,ann=FALSE)
+  symbols(seq(from=1,to=19,by=2),slice.table$Slope.seed,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(-0.3,0.3),main='speciation~seed.size.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1,xaxs='i')
+  axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
+  plot(0,type='n',axes=FALSE,ann=FALSE)
+  symbols(seq(from=1,to=19,by=2),slice.table$Slope.seed,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(-0.3,0.3),main='speciation~seed.size.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1,xaxs='i')
+  axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
+  legend('topleft',c('< 25','25 - 50','> 50'),pch=21,col='black',pt.cex=c(5/3,5/2,5),bty='n',cex=1.5)
+  legend('center',c('< 0.05','0.05 - 0.1','> 0.1'),pch=19,col=c('black','dark grey','white'),pt.cex=5/2,bty='n',cex=1.5)
+  slice.table$point.colour<-'light grey'
+  slice.table$point.colour<-'light grey'
+  if (nrow(slice.table[slice.table$pvalue.seedrate<0.05,])>0){
+    slice.table[slice.table$pvalue.seedrate<0.05,]$point.colour<-'black'
+  }
+  if (nrow(slice.table[slice.table$pvalue.seedrate>0.05&slice.table$pvalue.seedrate<0.1,])>0){
+    slice.table[slice.table$pvalue.seedrate>0.05&slice.table$pvalue.seedrate<0.1,]$point.colour<-'dark grey'
+  }
+  if (nrow(slice.table[slice.table$pvalue.seedrate>0.1,])>0){
+    slice.table[slice.table$pvalue.seedrate>0.1,]$point.colour<-'white'
+  }
+  plot(0,type='n',axes=FALSE,ann=FALSE)
+  symbols(seq(from=1,to=19,by=2),slice.table$Slope.seedrate,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(0,1),main='speciation~seed.size.rate.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1)
+  axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
+  plot(0,type='n',axes=FALSE,ann=FALSE)
+  symbols(seq(from=1,to=19,by=2),slice.table$Slope.seedrate,circles=slice.table$point.size,inches=0.2,bg=slice.table$point.colour,ylim=c(0,1),main='speciation~seed.size.rate.intervals',xaxt='n',ylab='pgls.slope',xlab='time.interval(myr)',cex.axis=.7,las=1)
+  axis(1,at=seq(from=0,to=20,by=2),labels=seq(from=0,to=20,by=2),cex.axis=.7)
+  legend('topleft',c('< 25','25 - 50','> 50'),pch=21,col='black',pt.cex=c(5/3,5/2,5),bty='n',cex=1.5)
+  legend('topright',c('< 0.05','0.05 - 0.1','> 0.1'),pch=19,col=c('black','dark grey','white'),pt.cex=5/2,bty='n',cex=1.5)
+  dev.off()
+}
 
 ####plot rate-scaled tree with branches coloured by rates of trait evolution
 #parameter tree: lambda, mu or div  tree (the tree file that will determine branch lengths)
@@ -341,6 +414,7 @@ plot_correlations<-function(folder,pattern,name,cladesizefile){
 plot_colour_ratetree<-function(parametertree,colourtree,name){
   #read speciation rate and trait rate trees (WITH BRANCHES TRANSFORMED FOR RATES)
   parametertree<-read.tree(parametertree)
+
   colourtree<-read.tree(colourtree)
   #get a vector with the percentiles
   quantiles.trait<-quantile(colourtree$edge.length, c(0,.25,.50,.75,1))
@@ -370,9 +444,9 @@ plot_colour_ratetree<-function(parametertree,colourtree,name){
   #plot the tree with the colours
   pdffile<-paste('./output/plots/',name,'_trait_paintedtree.pdf',sep='')
   pdf(pdffile,paper='a4')
-  plot(parametertree,edge.color=branchcolours,show.tip.label = F,edge.width = .3)
-  add.scale.bar(1,1,length = 0.5,cex=.5)
-  legend(title= 'Relative rates of seed mass evolution', x='right',inset = 0.065, legend = c('First Quartile \n<0.024','\nSecond Quartile \n(0.24-0.034)', '\nThird Quartile \n(0.034-0.095)', '\nFourth Quartile \n(>0.095)'),bty='n',fill = c(colours[1],colours[2], colours[3],colours[4]),cex=.5)
+  plot(parametertree,edge.color=branchcolours,show.tip.label = F,edge.width = 0.0001)
+  add.scale.bar(1,1,length=1)
+  legend(title= 'Relative rates of seed mass evolution', x='right',inset = 0.065, legend = c(paste('First Quartile \n<',round(quantiles.trait[2],3),sep=''),paste('\nSecond Quartile \n(',round(quantiles.trait[2],3),'-',round(quantiles.trait[3],3),')',sep=''), paste('\nThird Quartile \n(',round(quantiles.trait[3],3),'-',round(quantiles.trait[4],3),')',sep=''), paste('\nFourth Quartile \n(>',round(quantiles.trait[4],3),')',sep='')),bty='n',fill = c(colours[1],colours[2], colours[3],colours[4]),cex=.5)
   dev.off()
   #########to get clade names for labelling
   ######table<-read.table('./output/tables/table_Angiosperm_clades.txt',sep='\t')
@@ -400,4 +474,47 @@ plot_colour_ratetree<-function(parametertree,colourtree,name){
   ###tiplabels(tip=nodesMonocots,cex=.3)
   ###plot(parametertree,edge.color=branchcolours,show.tip.label = F,edge.width = .3)
   ###tiplabels(tip=nodesMagnoliids,cex=.3)
+}
+
+###run OLS for mean speciation vs mean trait evolution rates (with scaled trees) + plot
+plot_OLS_speciation_trait<-function(speciationtree,traittree){
+  speciationtree<-read.tree(speciationtree)
+  traittree<-read.tree(traittree)
+  
+  pdf('./output/plots/meanspeciation_meanphenotypic_branches.pdf')
+  plot(log10(speciationtree$edge.length)~log10(traittree$edge.length),pch=16,cex=.7,xlab='Phenotypic rate',ylab='Speciation rate',xaxt='n',yaxt='n')
+  ticks.x<-seq(-3,1 , by = 1)
+  axis(1, at = ticks.x, labels=10^(ticks.x), las=1)
+  ticks.y<-seq(-2, 1, by = 1)
+  axis(2, at = ticks.y, labels=10^(ticks.y), las=1)
+  abline(lm(log10(speciationtree$edge.length)~log10(traittree$edge.length)),lty=2)
+  dev.off()
+}
+
+plot_randomposterior_correlation<-function(Div_edata,tablefile){
+  #read table with trait evolution rates
+  tablefile<-read.table(tablefile,header=T,sep='\t',stringsAsFactors = F)
+  #get a random sample of the BAMM posterior
+  random<-subsetEventData(Div_edata,index=sample(c(1:length(Div_edata$eventData)),1))
+  #order the table by the tip labels
+  tablefile<-tablefile[match(random$tip.label, tablefile$names),]
+  pdf('./output/plots/randomsample_correlation.pdf')
+  plot(log10(random$meanTipLambda)~log10(tablefile$mean.beta.rates),pch=16,cex=.7,xlab='Phenotypic rate',ylab='Speciation rate',xaxt='n',yaxt='n')
+  ticks.x<-seq(-3,1 , by = 1)
+  axis(1, at = ticks.x, labels=10^(ticks.x), las=1)
+  ticks.y<-seq(-2, 1, by = 1)
+  axis(2, at = ticks.y, labels=10^(ticks.y), las=1)
+  #calculate spearman (see generate_correlations_strapp in BAMM_analysis.R for an explanation on this)
+  x<-seq(-10,10,by=0.01)
+  beta<-vector('numeric')
+  for (a in 1:length(x)){
+    beta[a]<-cor(log10(random$meanTipLambda)-(x[a]*tablefile$mean.beta.rates),tablefile$mean.beta.rates,method='s') 
+  }
+  value<-which.min(abs(beta - 0))
+  df<-data.frame(x,beta)
+  slope<-df[df$beta==df$beta[value],]$x
+  model<-lm(log10(random$meanTipLambda)-(slope*(log10(tablefile$mean.beta.rates)))~0)
+  intercept<-median(model$residuals)
+  abline(intercept,slope,lty=2)
+  dev.off()
 }

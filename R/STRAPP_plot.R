@@ -12,8 +12,12 @@ STRAPP_plot<-function(treefile,eventfile,traitdata,burnin,name){
   tree<-read.tree(treefile)
   #get event data
   print('Analysing eventfile')
-  Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 5000,type='diversification')
-  trait.input<-read.table(traitdata,header=T,sep='\t')
+  if (class(eventfile)!='bammdata'){
+    Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 1000,type='diversification')
+  }else if (class(eventfile)=='bammdata'){
+    Div_edata<-eventfile
+  }
+    trait.input<-read.table(traitdata,header=T,sep='\t')
   if(name=='seed'){
     #read trait input
     trait_data<-trait.input$log.Seed.Weight
@@ -32,9 +36,9 @@ STRAPP_plot<-function(treefile,eventfile,traitdata,burnin,name){
     names(trait_data)<-trait.input$tip.label
   }
   print('Running strapp tests')
-  strapp.lambda<-traitDependentBAMM(Div_edata, traits = trait_data, 5000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.mu<-traitDependentBAMM(Div_edata, traits = trait_data, 5000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.div<-traitDependentBAMM(Div_edata, traits = trait_data, 5000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.lambda<-traitDependentBAMM(Div_edata, traits = trait_data, 5000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = TRUE, two.tailed = TRUE) 
+  strapp.mu<-traitDependentBAMM(Div_edata, traits = trait_data, 5000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = TRUE, two.tailed = TRUE) 
+  strapp.div<-traitDependentBAMM(Div_edata, traits = trait_data, 5000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = TRUE, two.tailed = TRUE) 
   print('Plotting strapp histograms')
   plot_strapp_density(strapp.lambda, paste('lambda_',name,sep=''))
   plot_strapp_density(strapp.mu,paste('mu_',name,sep=''))

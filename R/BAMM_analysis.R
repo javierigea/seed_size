@@ -16,7 +16,13 @@ analyse_BAMM_output<-function(treefile,eventfile,traitdata,burnin,mode,name){
   tree<-read.tree(treefile)
   #get event data
   print('Analysing eventfile')
-  Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 5000,type=mode)
+  if (class(eventfile)!='bammdata'){
+    Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 5000,type=mode)
+  }else if (class(eventfile)=='bammdata'){
+    Div_edata<-eventfile
+  }
+  
+  
   #number of shifts
   shift_probs <- summary(Div_edata)
   if (mode=='diversification'){
@@ -30,7 +36,7 @@ analyse_BAMM_output<-function(treefile,eventfile,traitdata,burnin,mode,name){
     row.names(rates.df)<-NULL
     colnames(rates.df)[1]<-'names'
     trait_input<-read.table(traitdata,sep='\t')
-    rates.df<-merge(rates.df,trait_input,by.x='names',by.y='V1')
+    rates.df<-merge(rates.df,trait_input,by.x='names',by.y='V1',all.x=TRUE)
     colnames(rates.df)[ncol(rates.df)]<-'log.Seed.Weight'    
     write.table(rates.df,file=paste('./output/tables/BAMM_diversification_rates_',name,'.txt',sep=''),quote=F,row.names=F,sep='\t')
   }
@@ -44,7 +50,7 @@ analyse_BAMM_output<-function(treefile,eventfile,traitdata,burnin,mode,name){
     #add SeedWeight info to table
     trait_input<-read.table(traitdata,sep='\t')
     rates.df<-merge(rates.df,trait_input,by.x='names',by.y='V1')
-    colnames(rates.df)[ncol(rates.df)]<-'log.Seed.Weight'    
+    colnames(rates.df)[ncol(rates.df)]<-'trait'    
     write.table(rates.df,file=paste('./output/tables/BAMM_trait_rates_',name,'.txt',sep=''),quote=F,row.names=F,sep='\t')
   }
 }  
@@ -61,7 +67,11 @@ rate_scaled_trees<-function(treefile,eventfile,burnin,mode,parameter){
   tree<-read.tree(treefile)
   #get event data
   print('Analysing eventfile')
-  Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 5000,type=mode)
+  if (class(eventfile)!='bammdata'){
+    Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 1000,type=mode)
+  }else if (class(eventfile)=='bammdata'){
+    Div_edata<-eventfile
+  }
   #rate scaled trees
   print('Getting rate scaled tree')
   parameter.tree<-getMeanBranchLengthTree(Div_edata,rate=parameter)
@@ -80,7 +90,11 @@ generate_correlations_strapp<-function(treefile,eventfile,traitdata,burnin,name,
   tree<-read.tree(treefile)
   #get event data
   print('Analysing eventfile')
-  Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 5000,type='diversification')
+  if (class(eventfile)!='bammdata'){
+    Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 1000,type='diversification')
+  }else if (class(eventfile)=='bammdata'){
+    Div_edata<-eventfile
+  }
   trait.input<-read.table(traitdata,header=T,sep='\t')
   if(name=='seed'){
     #read trait input
@@ -112,7 +126,7 @@ generate_correlations_strapp<-function(treefile,eventfile,traitdata,burnin,name,
     gen<-strapp$gen[i]
     #get parameters from eventobject
     strapp.eventdata <- cbind(Div_edata$edge, Div_edata$eventVectors[[gen]])
-    strapp.eventdata <- strapp.eventdata[strapp.eventdata[,2] <= length(tree$tip.label), ]
+    strapp.eventdata <- strapp.eventdata[strapp.eventdata[,2] <= length(Div_edata$tip.label), ]
     strapp.eventdata <- data.frame(Div_edata$tip.label, strapp.eventdata[,3], Div_edata$tipLambda[[gen]],Div_edata$tipMu[[gen]],(Div_edata$tipLambda[[gen]]-Div_edata$tipMu[[gen]]))
     colnames(strapp.eventdata)<-c('tip.label','event','tip.lambda','tip.mu','tip.div')
     #add trait data to parameters

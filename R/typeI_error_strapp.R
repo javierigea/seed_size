@@ -1,7 +1,8 @@
 #simulate traits from Rabosky Huang 2015
 #treefile: tree to run type I error test
 #name: name to append to outputfiles
-
+library(ape)
+library(BAMMtools)
 typeIerror_strapp<-function(treefile,eventfile,burnin,name){
   #function to simulate traits matrix (Rabosky and Huang 2015)
   simulateTraitsMatrix <- function(phy, sigma2 = 1, rootstate=0, reps=100, verbose=T){  
@@ -30,8 +31,14 @@ typeIerror_strapp<-function(treefile,eventfile,burnin,name){
   #############################
   
   tree<-read.tree(treefile)
+  if (class(eventfile)!='bammdata'){
+    Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 1000,type='diversification')
+  }else if (class(eventfile)=='bammdata'){
+    Div_edata<-eventfile
+  }
+  
+  tree<-drop.tip(tree,setdiff(tree$tip.label,Div_edata$tip.label))
   typeItree<-simulateTraitsMatrix(tree,reps = 1000)
-  Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 5000,type='diversification')
   #perform permutation on each of the simulated trait data
   p1<-sapply(1:dim(typeItree$states)[2],function(i){
     cat(i, '\n')

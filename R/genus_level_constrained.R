@@ -13,14 +13,12 @@ library(MuMIn)
 #####this script runs the genera analysis with the species level tree
 #####it selects monophyletic genera with 4 or more species with seed size data in the Zanne tree
 #####and measures diversification with Magallon & Sanderson and fits BM with fitContinuous
-cat ('running genus level analysis - with constraints for species with seed size data','\n')
-cat ('getting phylogenetic data','\n')
+cat('preparing dataset to run clade based analyses','\n')
 #Qian and Jin created an updated version of Zanne tree - 'Appendix S3-v2' or 'QianTree.txt'
 #reference doi: 10.1093/jpe/rtv047
 Qian<-read.tree('./raw_data/QianTree.txt')
-Qian_TPL<-read.table('./output/tables/Qian_TPL.txt',header=T,sep='\t',stringsAsFactors = F)
-##fix a mistake with Ranunculus
-Qian_TPL[Qian_TPL$Merged=='Ranunculus_maclovianus',]$Merged<-'Carex_fuscula'
+Qian_TPL<-read.table('./output/tables/Qian_dataset_TPL.txt',header=T,sep='\t',stringsAsFactors = F)
+Qian_TPL$Merged<-paste(Qian_TPL$Genus,Qian_TPL$Species,sep='_')
 #run through taxonlookup
 Qian_TPLunique<-Qian_TPL[!duplicated(Qian_TPL$Merged),]
 Qian_Lookup<-lookup_table(as.character(Qian_TPLunique$Merged),by_species = TRUE)
@@ -31,7 +29,7 @@ row.names(Qian_Lookup_Angios)<-NULL
 Qian_Lookup_Angios_TPL<-merge(Qian_Lookup_Angios,Qian_TPLunique,by.x='Fullspecies',by.y='Merged')
 colnames(Qian_Lookup_Angios_TPL)[1]<-'New_Species'
 Qian_Lookup_Angios_TPL$Old_Species<-paste(Qian_Lookup_Angios_TPL$Genus,Qian_Lookup_Angios_TPL$Species,sep='_')
-Qian_Lookup_Angios_TPL<-Qian_Lookup_Angios_TPL[,c(c(1:5),23)]
+Qian_Lookup_Angios_TPL<-Qian_Lookup_Angios_TPL[,c(c(1:6),23)]
 #drop tips in Qian tree (not angios, duplicated, hybrids)
 remove_tips<-setdiff(Qian$tip.label,Qian_Lookup_Angios_TPL$Old_Species)
 Qian_dropped<-drop.tip(Qian,remove_tips)
@@ -118,11 +116,10 @@ names(Seed_Data)<-Kew.TaxLookUp$Species
 name.check.Seed<-name.check(Qian_dropped,Seed_Data)
 Qian_dropped.Seed<-drop.tip(Qian_dropped,name.check.Seed$tree_not_data)
 Kew.TaxLookUp.Qiandropped<-merge(data.frame(Qian_dropped.Seed$tip.label),Kew.TaxLookUp,by.x='Qian_dropped.Seed.tip.label',by.y='Species')
-Kew.TaxLookUp.Qiandropped<-Kew.TaxLookUp.Qiandropped[,c(1,6)]
+Kew.TaxLookUp.Qiandropped<-Kew.TaxLookUp.Qiandropped[,c(1,8)]
 colnames(Kew.TaxLookUp.Qiandropped)<-c('Species','Log.Seed.Weight')
 Qian_Lookup_Angios_TPL.selected<-merge(Qian_Lookup_Angios_TPL.selected,Kew.TaxLookUp.Qiandropped,by.x='New_Species',by.y='Species',all.x=TRUE)
 Qian_Lookup_Angios_TPL.selected<-na.omit(Qian_Lookup_Angios_TPL.selected)
-Qian_Lookup_Angios_TPL.selected$Log.Seed.Weight<-log10(Qian_Lookup_Angios_TPL.selected$Log.Seed.Weight)
 #count the number of species per genera with seed data
 genus.species.seedmass.table<-table(Qian_Lookup_Angios_TPL.selected$genus)
 genus.species.seedmass.table<-data.frame(genus.species.seedmass.table,stringsAsFactors = F)

@@ -12,78 +12,20 @@ library(MonoPhy)
 library(plyr)
 
 
-##########build the Cvalue dataset, write output to KewCvaluedata_GenusLevel_taxonlookup.txt ( to be used later)
-#tablefile: 'genome_size_allKew.txt'
-build_Cvalue_dataset<-function(tablefile){
-  Cvalue<-read.table('./raw_data/genome_size_allKew.txt', sep="\t", header = T)
-  Cvalue$Merged<-paste(Cvalue$Genus, Cvalue$Species, sep = '_')
-  Cvalue<-Cvalue[!duplicated(Cvalue$Merged),]
-  colnames(Cvalue)[3]<-'C.value'
-  Genera.Cvalue<-aggregate(C.value~Genus, data=Cvalue, mean)
-  colnames(Genera.Cvalue)<-c('genus','C.value')
-  Cvalue<-Genera.Cvalue
-  write.table(Cvalue, file = './output/tables/KewCvalue_GenusLevel.txt', quote = FALSE, sep = '\t', row.names = FALSE)
-}  
 
-
-build_lifecycle_dataset<-function(annualsfile,perennialsfile){
-  annuals<-read.csv(annualsfile, header = T, sep = '\t')
-  perennials<-read.csv(perennialsfile,header = T, sep = '\t')
-  annuals$Merged<-paste(annuals$Genus, annuals$Species, sep = '_')
-  perennials$Merged<-paste(perennials$Genus, perennials$Species, sep = '_')
-  annuals<-annuals[!duplicated(annuals$Merged),]
-  annuals$cycle<-'annual'
-  perennials<-perennials[!duplicated(perennials$Merged),]
-  perennials$cycle<-'perennial'
-  all<-rbind(annuals,perennials)
-  all$Original.Reference<-NULL
-  all$Paper<-NULL
-  colnames(all)[3]<-'C.value'
-  all<-all[!(all$Species==""),]
-  #adding "annuality" info (calculating proportion of annual species for each genera)
-  cyclecount<-count(all, c("Genus", "cycle"))
-  cyclecount<-cyclecount[order(cyclecount$Genus),]
-  cyclecount$Genus<-as.character(cyclecount$Genus)
-  annuality<-function(x){
-    annual.count<-subset(cyclecount,cyclecount$Genus==x & cyclecount$cycle=='annual')
-    perennial.count<-subset(cyclecount,cyclecount$Genus==x & cyclecount$cycle=='perennial')
-    annual.count<-annual.count$freq
-    perennial.count<-perennial.count$freq
-    if (length(annual.count)==0){annual.count<-0}
-    if (length(perennial.count)==0){perennial.count<-0}
-    annuality<-annual.count/(annual.count+perennial.count)
-    res<-data.frame(x,annuality)
-    return(res)
-  }
-  list<-lapply(unique(cyclecount$Genus),function(x) annuality(x))
-  annual <- data.frame(matrix(unlist(list), nrow=length(list), byrow=T))
-  annual$X1<-unique(cyclecount$Genus)
-  colnames(annual)<-c('Genus','Annuality')
-  write.table(annual,file='./output/tables/KewLifeCycle_GenusLevel.txt',sep='\t',row.names=F,quote=F)
-}
-annual_vs_perennial<-function(treefile,seedtablefile,cvaluetablefile,lifecycletablefile){
+annual_vs_perennial<-function(treefile,traitfile,cvaluetablefile,lifecycletablefile){
   tree<-read.tree(treefile)
-  #load the seed mass dataset (n=4105, run through BAMM), NO HEADER
-  seed<-read.table(seedtablefile,header=F,sep='\t')
-  colnames(seed)<-c('genus','log10.Seed.Weight')
-  #load the Cvalue dataset
-  Cvalue<-read.table(cvaluetablefile,header=T,sep='\t')
-  colnames(Cvalue)<-c('genus','C.value')
-  annual<-read.table(lifecycletablefile,header=T,sep='\t')
-  #merge seedmass and Cvalue
-  seedCvalue<-merge(seed,Cvalue,by.x='genus',by.y='genus')
-  #merge seedmass and lifecycle
-  seedlifecycle<-merge(seed,annual,by.x='genus',by.y='Genus')
-  #merge all three
-  seedCvaluelifecycle<-merge(seedCvalue,seedlifecycle,by.x='genus',by.y='genus')
-  seedCvaluelifecycle.strict<-seedCvaluelifecycle
-  seedCvaluelifecycle.strict<-subset(seedCvaluelifecycle.strict,seedCvaluelifecycle.strict$Annuality==1 | seedCvaluelifecycle.strict$Annuality==0)
-  colnames(seedCvaluelifecycle.strict)[2]<-'log10.Seed.Weight'
-  seedCvaluelifecycle.strict$log10.Seed.Weight.y<-NULL
+  #load the trait dataset
+  trait<-read.table(traitfile,header=T,sep='\t',stringsAsFactors = F)
+  tree.trait<-drop.tip(tree,setdiff(tree$tip.label,trait$Species))
   #run pgls
-  tree$node.label<-NULL
-  comp.data<-comparative.data(tree,seedCvaluelifecycle.strict,names.col = 'genus')
-  pgls.Seed.Annuality<-pgls(log10.Seed.Weight~Annuality, data=comp.data, lambda="ML")
+  tree.trait$node.label<-NULL
+  comp.data<-comparative.data(tree.trait,trait,names.col = 'Species')
+  #not working with caper
+  #pgls.Seed.LifeCycle<-pgls(log10.SeedWeight~cycle,data=comp.data, lambda="ML")
+  pgls.seedLifeCycle<-gls(log10.SeedWeight ~ cycle, correlation = corPagel(1,phy = tree.trait,fixed=FALSE),data = trait, method = "ML")
+  
+  pgls.seedwoody<-gls(log10.SeedWeight ~ woodiness.state, correlation = corPagel(1,phy = tree.trait,fixed=FALSE),data = trait, method = "ML")
   summary(pgls.Seed.Annuality)
   ######plot seed mass in annuals and perennials
   seedCvaluelifecycle.strict$Life.Cycle<-NA
@@ -104,57 +46,65 @@ annual_vs_perennial<-function(treefile,seedtablefile,cvaluetablefile,lifecycleta
 #seedtablefile BAMMPhyndr_GenusSeed_trait_data.txt
 #cvaluetablefile KewCvaluedata_GenusLevel_taxonlookup.txt
 #lifecycletablefile KewLifeCycle_GenusLevel.txt
-run_seedlifecycleCvalue_STRAPP<-function(treefile,eventfile,burnin,seedtablefile,cvaluetablefile,lifecycletablefile){
+run_seedlifecycleCvaluewoodiness_STRAPP<-function(treefile,eventfile,burnin,traitfile){
   tree<-read.tree(treefile)
   #get event data
-  print('Analysing eventfile')
-  Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 5000,type='diversification')
-  #load the seed mass dataset (n=4105, run through BAMM), NO HEADER
-  seed<-read.table(seedtablefile,header=F,sep='\t')
-  colnames(seed)<-c('genus','log10.Seed.Weight')
-  #load the Cvalue dataset
-  Cvalue<-read.table(cvaluetablefile,header=T,sep='\t')
-  colnames(Cvalue)<-c('genus','C.value')
-  annual<-read.table(lifecycletablefile,header=T,sep='\t')
-  #merge seedmass and Cvalue
-  seedCvalue<-merge(seed,Cvalue,by.x='genus',by.y='genus')
-  #merge seedmass and lifecycle
-  seedlifecycle<-merge(seed,annual,by.x='genus',by.y='Genus')
-  #merge all three
-  seedCvaluelifecycle<-merge(seedCvalue,seedlifecycle,by.x='genus',by.y='genus')
-  seedCvaluelifecycle.strict<-seedCvaluelifecycle
-  seedCvaluelifecycle.strict<-subset(seedCvaluelifecycle.strict,seedCvaluelifecycle.strict$Annuality==1 | seedCvaluelifecycle.strict$Annuality==0)
-  colnames(seedCvaluelifecycle.strict)[2]<-'log10.Seed.Weight'
-  seedCvaluelifecycle.strict$log10.Seed.Weight.y<-NULL
-  #all three analysis
-  all.Cvalue_data<-seedCvaluelifecycle.strict$C.value
-  names(all.Cvalue_data)<-seedCvaluelifecycle.strict$genus
-  all.seed_data<-seedCvaluelifecycle.strict$log10.Seed.Weight
-  names(all.seed_data)<-seedCvaluelifecycle.strict$genus
-  all.LifeCycle_data<-seedCvaluelifecycle.strict$Annuality
-  names(all.LifeCycle_data)<-seedCvaluelifecycle.strict$genus
+  if (class(eventfile)!='bammdata'){
+    Div_edata <- getEventData(tree, eventfile, burnin = burnin, nsamples = 5000,type='diversification')
+  }else if (class(eventfile)=='bammdata'){
+    Div_edata<-eventfile
+  }
+  #load traitdata
+  trait<-read.table(traitfile,header=T,sep='\t',stringsAsFactors = F)
+  #change lifecycle to categorical
+  #lifecycle: perennial-0; annual-1
+  trait[trait$cycle=='annual',]$cycle<-1
+  trait[trait$cycle=='perennial',]$cycle<-0
+  
+  #extracting subtreeBAMM
+  subtree<-subtreeBAMM(Div_edata,tips=trait$Species)
+  #all four analysis
+  all.Cvalue_data<-trait$C.value
+  names(all.Cvalue_data)<-trait$Species
+  all.seed_data<-trait$log10.SeedWeight
+  names(all.seed_data)<-trait$Species
+  all.LifeCycle_data<-trait$cycle
+  names(all.LifeCycle_data)<-trait$Species
+  all.LifeCycle_data<-as.numeric(trait$cycle)
+  names(all.LifeCycle_data)<-trait$Species
+  all.Woodiness_data<-trait$woodiness.state
+  names(all.Woodiness_data)<-trait$Species
+  
   #running STRAPP for all dataset
   #seed mass STRAPP
-  strapp.all.seed.lambda<-traitDependentBAMM(Div_edata, traits = all.seed_data, 1000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.all.seed.mu<-traitDependentBAMM(Div_edata, traits = all.seed_data, 1000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.all.seed.div<-traitDependentBAMM(Div_edata, traits = all.seed_data, 1000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.seed.lambda<-traitDependentBAMM(subtree, traits = all.seed_data, 1000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.seed.mu<-traitDependentBAMM(subtree, traits = all.seed_data, 1000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.seed.div<-traitDependentBAMM(subtree, traits = all.seed_data, 1000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
   strapp.all.seed.lambda.diff<-abs(strapp.all.seed.lambda$obs.corr)-abs(strapp.all.seed.lambda$null)
   strapp.all.seed.mu.diff<-abs(strapp.all.seed.mu$obs.corr)-abs(strapp.all.seed.mu$null)
   strapp.all.seed.div.diff<-abs(strapp.all.seed.div$obs.corr)-abs(strapp.all.seed.div$null)
   #Cvalue STRAPP
-  strapp.all.Cvalue.lambda<-traitDependentBAMM(Div_edata, traits = all.Cvalue_data, 1000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.all.Cvalue.mu<-traitDependentBAMM(Div_edata, traits = all.Cvalue_data, 1000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.all.Cvalue.div<-traitDependentBAMM(Div_edata, traits = all.Cvalue_data, 1000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.Cvalue.lambda<-traitDependentBAMM(subtree, traits = all.Cvalue_data, 1000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.Cvalue.mu<-traitDependentBAMM(subtree, traits = all.Cvalue_data, 1000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.Cvalue.div<-traitDependentBAMM(subtree, traits = all.Cvalue_data, 1000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
   strapp.all.Cvalue.lambda.diff<-abs(strapp.all.Cvalue.lambda$obs.corr)-abs(strapp.all.Cvalue.lambda$null)
   strapp.all.Cvalue.mu.diff<-abs(strapp.all.Cvalue.mu$obs.corr)-abs(strapp.all.Cvalue.mu$null)
   strapp.all.Cvalue.div.diff<-abs(strapp.all.Cvalue.div$obs.corr)-abs(strapp.all.Cvalue.div$null)
-  #LifeCycle.Strict STRAPP
-  strapp.all.LifeCycle.strict.lambda<-traitDependentBAMM(Div_edata, traits = all.LifeCycle_data, 1000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.all.LifeCycle.strict.mu<-traitDependentBAMM(Div_edata, traits = all.LifeCycle_data, 1000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.all.LifeCycle.strict.div<-traitDependentBAMM(Div_edata, traits = all.LifeCycle_data, 1000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
-  strapp.all.LifeCycle.strict.lambda.diff<-abs(strapp.all.LifeCycle.strict.lambda$obs.corr)-abs(strapp.all.LifeCycle.strict.lambda$null)
-  strapp.all.LifeCycle.strict.mu.diff<-abs(strapp.all.LifeCycle.strict.mu$obs.corr)-abs(strapp.all.LifeCycle.strict.mu$null)
-  strapp.all.LifeCycle.strict.div.diff<-abs(strapp.all.LifeCycle.strict.div$obs.corr)-abs(strapp.all.LifeCycle.strict.div$null)
+  #LifeCycle STRAPP
+  strapp.all.LifeCycle.lambda<-traitDependentBAMM(subtree, traits = all.LifeCycle_data, 1000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.LifeCycle.mu<-traitDependentBAMM(subtree, traits = all.LifeCycle_data, 1000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.LifeCycle.div<-traitDependentBAMM(subtree, traits = all.LifeCycle_data, 1000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.LifeCycle.lambda.diff<-abs(strapp.all.LifeCycle.lambda$obs.corr)-abs(strapp.all.LifeCycle.lambda$null)
+  strapp.all.LifeCycle.mu.diff<-abs(strapp.all.LifeCycle.mu$obs.corr)-abs(strapp.all.LifeCycle.mu$null)
+  strapp.all.LifeCycle.div.diff<-abs(strapp.all.LifeCycle.div$obs.corr)-abs(strapp.all.LifeCycle.div$null)
+  #Woodiness STRAPP
+  strapp.all.Woodiness.lambda<-traitDependentBAMM(subtree, traits = all.Woodiness_data, 1000, rate = 'speciation', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.Woodiness.mu<-traitDependentBAMM(subtree, traits = all.Woodiness_data, 1000, rate = 'extinction', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.Woodiness.div<-traitDependentBAMM(subtree, traits = all.Woodiness_data, 1000, rate = 'net diversification', return.full = TRUE, method = 'spearman', logrates = FALSE, two.tailed = TRUE) 
+  strapp.all.Woodiness.lambda.diff<-abs(strapp.all.Woodiness.lambda$obs.corr)-abs(strapp.all.Woodiness.lambda$null)
+  strapp.all.Woodiness.mu.diff<-abs(strapp.all.Woodiness.mu$obs.corr)-abs(strapp.all.Woodiness.mu$null)
+  strapp.all.Woodiness.div.diff<-abs(strapp.all.Woodiness.div$obs.corr)-abs(strapp.all.Woodiness.div$null)
+  
   #table for seed results
   seed.results<-data.frame(cbind(c(strapp.all.seed.lambda$estimate,strapp.all.seed.mu$estimate,strapp.all.seed.div$estimate),c(strapp.all.seed.lambda$p.value,strapp.all.seed.mu$p.value,strapp.all.seed.div$p.value)))
   row.names(seed.results)<-c('lambda','mu','div')
@@ -164,47 +114,59 @@ run_seedlifecycleCvalue_STRAPP<-function(treefile,eventfile,burnin,seedtablefile
   row.names(Cvalue.results)<-c('lambda','mu','div')
   colnames(Cvalue.results)<-c('estimate','p-value')
   #table for LifeCycle results
-  LifeCycle.results<-data.frame(cbind(c(strapp.all.LifeCycle.strict.lambda$estimate,strapp.all.LifeCycle.strict.mu$estimate,strapp.all.LifeCycle.strict.div$estimate),c(strapp.all.LifeCycle.strict.lambda$p.value,strapp.all.LifeCycle.strict.mu$p.value,strapp.all.LifeCycle.strict.div$p.value)))
+  LifeCycle.results<-data.frame(cbind(c(strapp.all.LifeCycle.lambda$estimate,strapp.all.LifeCycle.mu$estimate,strapp.all.LifeCycle.div$estimate),c(strapp.all.LifeCycle.lambda$p.value,strapp.all.LifeCycle.mu$p.value,strapp.all.LifeCycle.div$p.value)))
   row.names(LifeCycle.results)<-c('lambda','mu','div')
   colnames(LifeCycle.results)<-c('estimate','p-value')
-  seedcvaluelifecycle.df<-cbind(seed.results,Cvalue.results,LifeCycle.results)
-  colnames(seedcvaluelifecycle.df)<-c('seedmass.estimate','seedmass.pvalue','Cvalue.estimate','Cvalue.pvalue','LifeCycle.estimate','LifeCycle.pvalue')
-  seedcvaluelifecycle.df$parameter<-row.names(seedcvaluelifecycle.df)
-  row.names(seedcvaluelifecycle.df)<-NULL
-  seedcvaluelifecycle.df<-seedcvaluelifecycle.df[c(ncol(seedcvaluelifecycle.df),1:(ncol(seedcvaluelifecycle.df)-1))]
-  write.table(seedcvaluelifecycle.df,'./output/tables/seedCvalueLifeCycle_STRAPP.txt',quote=F,row.names=F,sep='\t')
+  #table for Woodiness results
+  Woodiness.results<-data.frame(cbind(c(strapp.all.Woodiness.lambda$estimate,strapp.all.Woodiness.mu$estimate,strapp.all.Woodiness.div$estimate),c(strapp.all.Woodiness.lambda$p.value,strapp.all.Woodiness.mu$p.value,strapp.all.Woodiness.div$p.value)))
+  row.names(Woodiness.results)<-c('lambda','mu','div')
+  colnames(Woodiness.results)<-c('estimate','p-value')
+  
+  #seedcvaluelifecyclewoodiness.df<-cbind(seed.results,Cvalue.results,LifeCycle.results,Woodiness.results)
+  seedcvaluelifecyclewoodiness.df<-cbind(seed.results,Cvalue.results,Woodiness.results)
+  #colnames(seedcvaluelifecyclewoodiness.df)<-c('seedmass.estimate','seedmass.pvalue','Cvalue.estimate','Cvalue.pvalue','LifeCycle.estimate','LifeCycle.pvalue','Woodiness.estimate','Woodiness.pvalue')
+  colnames(seedcvaluelifecyclewoodiness.df)<-c('seedmass.estimate','seedmass.pvalue','Cvalue.estimate','Cvalue.pvalue','Woodiness.estimate','Woodiness.pvalue')
+  seedcvaluelifecyclewoodiness.df$parameter<-row.names(seedcvaluelifecyclewoodiness.df)
+  row.names(seedcvaluelifecyclewoodiness.df)<-NULL
+  seedcvaluelifecyclewoodiness.df<-seedcvaluelifecyclewoodiness.df[c(ncol(seedcvaluelifecyclewoodiness.df),1:(ncol(seedcvaluelifecyclewoodiness.df)-1))]
+  write.table(seedcvaluelifecyclewoodiness.df,'./output/tables/seedCvalueLifeCycle_STRAPP.txt',quote=F,row.names=F,sep='\t')
   #write plot for lambda
   pdf(file='./output/plots/lambda_3trait_strapp_density.pdf',paper='a4')
   plot(density(strapp.all.seed.lambda.diff),ylim=c(0,10),xlim=c(-0.4,0.3),main=paste('SeedMass,C.value,Life Cycle (n=',length(all.Cvalue_data),')',sep=''),ylab='',xlab='absolute.diff in rho(obs-null)',col='blue')
   lines(density(strapp.all.Cvalue.lambda.diff),col='red')
-  lines(density(strapp.all.LifeCycle.strict.lambda.diff),col='dark green')
+  lines(density(strapp.all.LifeCycle.lambda.diff),col='dark green')
+  lines(density(strapp.all.Woodiness.lambda.diff),col='purple')
   abline(v=0,lty=2)
   abline(v=mean(strapp.all.seed.lambda.diff),col='blue',lty=2)
   abline(v=mean(strapp.all.Cvalue.lambda.diff),col='red',lty=2)
-  abline(v=mean(strapp.all.LifeCycle.strict.lambda.diff),col='dark green',lty=2)
-  legend('topright',lty=1,col=c('red','blue','dark green'),c('C.value','SeedMass','Life Cycle'),cex=.5,bty='n')
+  abline(v=mean(strapp.all.LifeCycle.lambda.diff),col='dark green',lty=2)
+  abline(v=mean(strapp.all.Woodiness.lambda.diff),col='purple',lty=2)
+  legend('topright',lty=1,col=c('red','blue','dark green','purple'),c('C.value','SeedMass','Life Cycle','Woodiness'),cex=.5,bty='n')
   dev.off()
   #write plot for mu
   pdf(file='./output/plots/mu_3trait_strapp_density.pdf',paper='a4')
   plot(density(strapp.all.seed.mu.diff),ylim=c(0,10),xlim=c(-0.4,0.3),main=paste('SeedMass,C.value,Life Cycle (n=',length(all.Cvalue_data),')',sep=''),ylab='',xlab='absolute.diff in rho(obs-null)',col='blue')
   lines(density(strapp.all.Cvalue.mu.diff),col='red')
-  lines(density(strapp.all.LifeCycle.strict.mu.diff),col='dark green')
+  lines(density(strapp.all.LifeCycle.mu.diff),col='dark green')
+  lines(density(strapp.all.Woodiness.mu.diff),col='purple')
   abline(v=0,lty=2)
   abline(v=mean(strapp.all.seed.mu.diff),col='blue',lty=2)
   abline(v=mean(strapp.all.Cvalue.mu.diff),col='red',lty=2)
-  abline(v=mean(strapp.all.LifeCycle.strict.mu.diff),col='dark green',lty=2)
-  legend('topright',lty=1,col=c('red','blue','dark green'),c('C.value','SeedMass','Life Cycle'),cex=.5,bty='n')
+  abline(v=mean(strapp.all.LifeCycle.mu.diff),col='dark green',lty=2)
+  abline(v=mean(strapp.all.Woodiness.mu.diff),col='purple',lty=2)
+  legend('topright',lty=1,col=c('red','blue','dark green','purple'),c('C.value','SeedMass','Life Cycle','Woodiness'),cex=.5,bty='n')
   dev.off()
   #write plot for div
   pdf(file='./output/plots/div_3trait_strapp_density.pdf',paper='a4')
   plot(density(strapp.all.seed.div.diff),ylim=c(0,10),xlim=c(-0.4,0.3),main=paste('SeedMass,C.value,Life Cycle (n=',length(all.Cvalue_data),')',sep=''),ylab='',xlab='absolute.diff in rho(obs-null)',col='blue')
   lines(density(strapp.all.Cvalue.div.diff),col='red')
-  lines(density(strapp.all.LifeCycle.strict.div.diff),col='dark green')
+  lines(density(strapp.all.LifeCycle.div.diff),col='dark green')
+  lines(density(strapp.all.Woodiness.div.diff),col='purple')
   abline(v=0,lty=2)
   abline(v=mean(strapp.all.seed.div.diff),col='blue',lty=2)
   abline(v=mean(strapp.all.Cvalue.div.diff),col='red',lty=2)
-  abline(v=mean(strapp.all.LifeCycle.strict.div.diff),col='dark green',lty=2)
-  legend('topright',lty=1,col=c('red','blue','dark green'),c('C.value','SeedMass','Life Cycle'),cex=.5,bty='n')
+  abline(v=mean(strapp.all.LifeCycle.div.diff),col='dark green',lty=2)
+  abline(v=mean(strapp.all.Woodiness.div.diff),col='purple',lty=2)
+  legend('topright',lty=1,col=c('red','blue','dark green','purple'),c('C.value','SeedMass','Life Cycle','Woodiness'),cex=.5,bty='n')
   dev.off()
 }
-  

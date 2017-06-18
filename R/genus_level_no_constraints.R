@@ -20,9 +20,9 @@ cat ('getting phylogenetic data','\n')
 #Qian and Jin created an updated version of Zanne tree - 'Appendix S3-v2' or 'QianTree.txt'
 #reference doi: 10.1093/jpe/rtv047
 Qian<-read.tree('./raw_data/QianTree.txt')
-Qian_TPL<-read.table('./output/tables/Qian_TPL.txt',header=T,sep='\t',stringsAsFactors = F)
-##fix a mistake with Ranunculus
-Qian_TPL[Qian_TPL$Merged=='Ranunculus_maclovianus',]$Merged<-'Carex_fuscula'
+Qian_TPL<-read.table('./output/tables/Qian_dataset_TPL.txt',header=T,sep='\t',stringsAsFactors = F)
+Qian_TPL$Merged<-paste(Qian_TPL$Genus,Qian_TPL$Species,sep='_')
+
 #run through taxonlookup
 Qian_TPLunique<-Qian_TPL[!duplicated(Qian_TPL$Merged),]
 Qian_Lookup<-lookup_table(as.character(Qian_TPLunique$Merged),by_species = TRUE)
@@ -33,7 +33,7 @@ row.names(Qian_Lookup_Angios)<-NULL
 Qian_Lookup_Angios_TPL<-merge(Qian_Lookup_Angios,Qian_TPLunique,by.x='Fullspecies',by.y='Merged')
 colnames(Qian_Lookup_Angios_TPL)[1]<-'New_Species'
 Qian_Lookup_Angios_TPL$Old_Species<-paste(Qian_Lookup_Angios_TPL$Genus,Qian_Lookup_Angios_TPL$Species,sep='_')
-Qian_Lookup_Angios_TPL<-Qian_Lookup_Angios_TPL[,c(c(1:5),23)]
+Qian_Lookup_Angios_TPL<-Qian_Lookup_Angios_TPL[,c(c(1:6),23)]
 #drop tips in Qian tree (not angios, duplicated, hybrids)
 remove_tips<-setdiff(Qian$tip.label,Qian_Lookup_Angios_TPL$Old_Species)
 Qian_dropped<-drop.tip(Qian,remove_tips)
