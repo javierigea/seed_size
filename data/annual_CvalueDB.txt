@@ -1,0 +1,943 @@
+Genus	Species	1C (pg)	Original Reference	Paper
+Arabidopsis	thaliana	0.16	Bennett et al., 2003 (Ref. 461)	2005a
+Valerianella	turgida	0.20	Hidalgo et al., 2010 (Ref. 638)	2012
+Valerianella	locusta	0.22	Hidalgo et al., 2010 (Ref. 638)	2012
+Arabis	auriculata	0.23	Hoffmann et al., 2010 (Ref. 657)	2012
+Valerianella	microcarpa	0.23	Hidalgo et al., 2010 (Ref. 638)	2012
+Valerianella	eriocarpa	0.24	Hidalgo et al., 2010 (Ref. 638)	2012
+Sisymbrium	loeselii	0.24	Kubesová et al., 2010 (Ref. 630)	2012
+Valerianella	dentata	0.25	Hidalgo et al., 2010 (Ref. 638)	2012
+Valerianella	pontica	0.26	Hidalgo et al., 2010 (Ref. 638)	2012
+Sisymbrium	altissimum	0.26	Kubesová et al., 2010 (Ref. 630)	2012
+Valerianella	multidentata	0.26	Hidalgo et al., 2010 (Ref. 638)	2012
+Valerianella	coronata	0.27	Hidalgo et al., 2010 (Ref. 638)	2012
+Arabis	montbretiana	0.28	Hoffmann et al., 2010 (Ref. 657)	2012
+Valerianella	echinata	0.30	Hidalgo et al., 2010 (Ref. 638)	2012
+Valerianella	vesicaria	0.31	Hidalgo et al., 2010 (Ref. 638)	2012
+Thlaspi	violascens	0.31	Peer et al., 2003 (Ref. 522)	2011
+Echium	bonnetii	0.32	Suda et al., 2005 (Ref. 552)	2011
+Urtica	urens	0.33	Bennett and Smith, 1976 (Ref. 2)	1976
+Cochlearia	sempervivum	0.33	Peer et al., 2003 (Ref. 522)	2011
+Veronica	arvensis	0.33	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Wahlenbergia	lobelioides	0.33	Suda et al., 2005 (Ref. 552)	2011
+Lemna	valdiviana	0.33	Wang et al., 2011 (Ref. 683)	2012
+Arabidopsis	pumila	0.34	Houben et al., 2003 (Ref. 518)	2011
+Lagenaria	siceraria	0.34	Achigan-Dako et al., 2008 (Ref. 583)	2011
+Fallopia	dumetorum	0.35	Bailey and Stace, 1992 (Ref. 213)	1995
+Arabidopsis	suecica	0.35	Lysák et al., 2009 (Ref. 599)	2011
+Olimarabidopsis	pumila	0.35	Lysák et al., 2009 (Ref. 599)	2011
+Cucurbita	lundelliana	0.36	Sisko et al., 2003 (Ref. 500)	2011
+Cucurbita	ecuadorensis	0.36	Sisko et al., 2003 (Ref. 500)	2011
+Brachypodium	distachyon	0.36	Hanson et al., 2002 (Ref. 465)	2005a
+Cucurbita	okeechobeensis	0.37	Sisko et al., 2003 (Ref. 500)	2011
+Chenopodium	pumilio	0.37	Kubesová et al., 2010 (Ref. 630)	2012
+Cucurbita	argyrosperma	0.37	Sisko et al., 2003 (Ref. 500)	2011
+Sinapis	arvensis	0.38	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Caulanthus	amplexicaulis	0.38	Johnston et al., 2005 (Ref. 509)	2011
+Wolffia	australiana	0.38	Wang et al., 2011 (Ref. 683)	2012
+Guillenia	lasiophyllum	0.38	Johnston et al., 2005 (Ref. 509)	2011
+Cucurbita	pedatifolia	0.39	Sisko et al., 2003 (Ref. 500)	2011
+Leontodon	longirostris	0.40	Marañón and Grubb, 1993 (Ref. 274)	1997
+Veronica	glauca	0.40	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Capsella	bursa-pastoris	0.40	Lysák et al., 2009 (Ref. 599)	2011
+Landoltia	punctata	0.41	Wang et al., 2011 (Ref. 683)	2012
+Cucurbita	cylindrata	0.42	Sisko et al., 2003 (Ref. 500)	2011
+Veronica	polita	0.42	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Atriplex	sabulosa	0.43	Belford and Thompson, 1981 (Ref. 150)	1991
+Atriplex	serenana	0.43	Belford and Thompson, 1981 (Ref. 150)	1991
+Polygonum	persicaria	0.43	Band, 1984 (Ref. 154)	1991
+Cucurbita	moschata	0.43	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Lemna	aequinoctialis	0.43	Wang et al., 2011 (Ref. 683)	2012
+Veronica	lycica	0.44	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Lemna	japonica	0.44	Wang et al., 2011 (Ref. 683)	2012
+Arabidopsis	thaliana	0.44	Schmuths et al., 2004 (Ref. 494)	2011
+Phaseolus	macvaughii	0.45	Mercado-Ruaro and Kenton, 1993 (Ref. 269-K)	1995
+Lotus	coimbrensis	0.45	Cheng and Grant, 1973 (Ref. 38)	1976
+Conyza	canadensis	0.45	Kubesová et al., 2010 (Ref. 630)	2012
+Panicum	capillare	0.45	Kubesová et al., 2010 (Ref. 630)	2012
+Cucurbita	maxima	0.46	Tatum et al., 2006 (Ref. 564)	2011
+Lemna	trisulca	0.46	Wang et al., 2011 (Ref. 683)	2012
+Oryza	nivara	0.47	Ammiraju et al., 2006 (Ref. 545)	2011
+Cucurbita	ficifolia	0.47	Sisko et al., 2003 (Ref. 500)	2011
+Chenopodium	pallidicaule	0.48	Bennett et al., 1976 (Ref. 108)	1991
+Amaranthus	hypochondriacus	0.48	Bennett et al., 1976 (Ref. 108)	1991
+Atriplex	phyllostegia	0.48	Belford and Thompson, 1981 (Ref. 150)	1991
+Vigna	sublobata	0.48	Ignacimuthu and Babu, 1988 (Ref. 220)	1995
+Medicago	truncatula	0.48	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Chenopodium	coronopus	0.48	Suda et al., 2005 (Ref. 552)	2011
+Cuscuta	campestris	0.48	Kubesová et al., 2010 (Ref. 630)	2012
+Lupinus	princei	0.49	Naganowska et al., 2003 (Ref. 520)	2011
+Lupinus	micranthus	0.49	Naganowska et al., 2003 (Ref. 520)	2011
+Oryza	sativa	0.50	Bennett et al., 1976 (Ref. 108)	1991
+Brassica	hirta	0.50	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Sinapis	alba	0.50	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Lemna	obscura	0.50	Wang et al., 2011 (Ref. 683)	2012
+Lemna	gibba G-3	0.50	Wang et al., 2011 (Ref. 683)	2012
+Diplotaxis	erucoides	0.51	Lysák et al., 2009 (Ref. 599)	2011
+Goodenia	mimuloides	0.52	Hanson et al., 2001 (Ref. 379)	2005a
+Amaranthus	cruentus	0.53	Bennett et al., 1976 (Ref. 108)	1991
+Plantago	ovata	0.53	Badr et al., 1987 (Ref. 173)	1995
+Malva	parviflora	0.53	Bidak and Brandham, 1995 (Ref. 282)	1997
+Setaria	italica	0.53	Bennett and Hanson, 1997 (Ref. 372)	2000
+Vigna	radiata	0.53	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Sesamum	triphyllum	0.54	Hanson et al., 2001 (Ref. 378)	2005a
+Lupinus	pusillus	0.54	Naganowska et al., 2006 (Ref. 524)	2011
+Veronica	verna	0.54	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Aeonium	canariense	0.54	Suda et al., 2005 (Ref. 552)	2011
+Lupinus	nanus	0.55	Naganowska et al., 2006 (Ref. 524)	2011
+Vigna	angularis	0.55	Parida et al., 1990 (Ref. 166)	1995
+Vigna	sinensis	0.55	Bennett and Smith, 1976 (Ref. 2)	1976
+Fumaria	muralis	0.55	Bennett and Smith, 1976 (Ref. 2)	1976
+Vigna	mungo	0.55	Ignacimuthu and Babu, 1988 (Ref. 220)	1995
+Cucurbita	pepo	0.55	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Trifolium	decorum	0.55	Akmal, 1989 (Ref. 269-F)	1995
+Brassica	tournefortii	0.55	Nagpal et al., 1996 (Ref. 296)	1997
+Amaranthus	albus	0.55	Kubesová et al., 2010 (Ref. 630)	2012
+Amaranthus	blitoides	0.56	Kubesová et al., 2010 (Ref. 630)	2012
+Lupinus	graecus	0.57	Naganowska et al., 2003 (Ref. 520)	2011
+Lupinus	concinnus	0.57	Naganowska et al., 2006 (Ref. 524)	2011
+Lupinus	termis	0.57	Naganowska et al., 2003 (Ref. 520)	2011
+Lupinus	vavilovi	0.57	Naganowska et al., 2003 (Ref. 520)	2011
+Lupinus	microcarpus	0.57	Naganowska et al., 2006 (Ref. 524)	2011
+Fedia	pallescens	0.57	Hidalgo et al., 2010 (Ref. 638)	2012
+Aphanes	arvensis	0.58	Bennett, 1972 (Ref. 1)	1976
+Atriplex	truncata	0.58	Belford and Thompson, 1981 (Ref. 150)	1991
+Eruca	sativa	0.58	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Lepidium	sativum	0.58	Johnston et al., 2005 (Ref. 509)	2011
+Vigna	unguiculata	0.60	Parida et al., 1990 (Ref. 166)	1995
+Lupinus	albus	0.60	Bennett and Smith, 1976 (Ref. 2)	1976
+Argemone	platyceras	0.60	Bennett and Smith, 1976 (Ref. 2)	1976
+Glaucium	corniculatum	0.60	Bennett and Smith, 1976 (Ref. 2)	1976
+Phaseolus	vulgaris	0.60	Mercado-Ruaro and Kenton, 1993 (Ref. 269-K)	1995
+Amaranthus	powellii	0.60	Sun et al., 1999 (Ref. 359)	2000
+Amaranthus	quitensis	0.60	Sun et al., 1999 (Ref. 359)	2000
+Lupinus	anatolicus	0.60	Obermayer et al., 1999 (Ref. 369)	2000
+Diplotaxis	catholica	0.60	Lysák et al., 2007 (Ref. 602)	2011
+Veronica	triloba	0.61	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Chenopodium	murale	0.62	Ohri, 2002 (Ref. 455)	2005a
+Setaria	verticillata	0.63	Bennett et al., 1997 (Ref. 270)	1997
+Amaranthus	caudatus	0.63	Sun et al., 1999 (Ref. 359)	2000
+Lupinus	pilosus	0.63	Obermayer et al., 1999 (Ref. 369)	2000
+Chenopodium	vulvaria	0.64	Ohri, 2002 (Ref. 455)	2005a
+Sorghum	timorense	0.64	Price et al., 2005 (Ref. 511)	2011
+Lupinus	arizonicus	0.64	Naganowska et al., 2006 (Ref. 524)	2011
+Wolffiella	gladiata	0.64	Wang et al., 2011 (Ref. 683)	2012
+Tephrosia	strigosa	0.65	Raina et al., 1986 (Ref. 183)	1995
+Cassia	absus	0.65	Ohri et al., 1986 (Ref. 186)	1995
+Euphorbia	hirta	0.65	Bennett et al., 1998 (Ref. 375)	2000
+Chenopodium	ficifolium	0.66	Ohri, 2002 (Ref. 455)	2005a
+Mercurialis	annua	0.66	Obbard et al., 2006 (Ref. 544)	2011
+Wolffiella	lingulata	0.67	Wang et al., 2011 (Ref. 683)	2012
+Cassia	tora	0.68	Ohri et al., 1986 (Ref. 186)	1995
+Cassia	occidentalis	0.68	Ohri et al., 1986 (Ref. 186)	1995
+Eragrostis	tef	0.68	Bennett and Smith, 1976 (Ref. 2)	1976
+Aichryson	laxum	0.68	Suda et al., 2005 (Ref. 552)	2011
+Lupinus	digitatus	0.69	Naganowska et al., 2003 (Ref. 520)	2011
+Aichryson	parlatorei	0.69	Suda et al., 2005 (Ref. 552)	2011
+Veronica	crista-galli	0.69	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Lupinus	palaestinus	0.70	Naganowska et al., 2003 (Ref. 520)	2011
+Kallstroemia	grandiflora	0.70	Sliwinska et al., 2009 (Ref. 624)	2012
+Polygonum	lapathifolium	0.70	Band, 1984 (Ref. 154)	1991
+Sisyrinchium	longipes	0.70	Kenton et al., 1986 (Ref. 177)	1995
+Amaranthus	hybridus	0.70	Bennett et al., 1997 (Ref. 270)	1997
+Trigonella	stellata	0.70	Bidak and Brandham, 1995 (Ref. 282)	1997
+Lagenaria	vulgaris	0.70	Ingle et al., 1975 (Ref. 69)	1982
+Linum	usitatissimum	0.70	Evans et al., 1972 (Ref. 7)	1976
+Veronica	syriaca	0.70	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Eleocharis	ovata	0.70	Zedek et al., 2010 (Ref. 632)	2012
+Lupinus	cosentinii	0.71	Naganowska et al., 2003 (Ref. 520)	2011
+Lupinus	linearis	0.71	Naganowska et al., 2006 (Ref. 524)	2011
+Veronica	triphyllos	0.71	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Mercurialis	huetii	0.72	Obbard et al., 2006 (Ref. 544)	2011
+Eleusine	indica	0.73	Bennett and Smith, 1976 (Ref. 2)	1976
+Fallopia	convolvulus	0.73	Bailey and Stace, 1992 (Ref. 213)	1995
+Veronica	agrestis	0.73	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Cyanus	segetum	0.74	Bancheva & Greilhuber, 2006 (Ref. 529)	2011
+Echinocystis	lobata	0.74	Kubesová et al., 2010 (Ref. 630)	2012
+Sorghum	bicolor	0.75	Laurie and Bennett, 1985 (Ref. 132)	1991
+Trifolium	tembense	0.75	Akmal, 1989 (Ref. 269-F)	1995
+Phaseolus	acutifolius	0.75	Mercado-Ruaro and Kenton, 1993 (Ref. 269-K)	1995
+Veronica	donii	0.75	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Atriplex	prostrata	0.76	Dolenc Koce et al., 2008 (Ref. 580)	2011
+Chenopodium	album	0.77	Ohri, 2002 (Ref. 455)	2005a
+Fedia	graciliflora	0.77	Hidalgo et al., 2010 (Ref. 638)	2012
+Veronica	persica	0.78	Bennett, 1972 (Ref. 1)	1976
+Cucumis	sagitattus	0.78	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Brassica	nigra	0.78	Verma and Rees, 1974 (Ref. 27)	1976
+Lupinus	bracteolaris	0.78	Naganowska et al., 2006 (Ref. 524)	2011
+Calibrachoa	pygmaea	0.78	Mishiba et al., 2000 (Ref. 387)	2005a
+Centranthus	calcitrapae	0.78	Hidalgo et al., 2010 (Ref. 638)	2012
+Biscutella	didyma	0.79	Peer et al., 2003 (Ref. 522)	2011
+Wolffia	brasiliensis	0.79	Wang et al., 2011 (Ref. 683)	2012
+Cucumis	anguira	0.80	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Cucumis	trigonus	0.80	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Plantago	ovata	0.80	Badr et al., 1987 (Ref. 173)	1995
+Dicranostigma	franchetiana	0.80	Bennett and Smith, 1976 (Ref. 2)	1976
+Cyperus	iria	0.80	Bennett et al., 1998 (Ref. 375)	2000
+Volutaria	canariensis	0.80	Suda et al., 2003 (Ref. 477)	2011
+Chenopodium	strictum	0.80	Kubesová et al., 2010 (Ref. 630)	2012
+Lupinus	atlanticus	0.81	Naganowska et al., 2003 (Ref. 520)	2011
+Cucumis	prophetarum	0.83	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Oryza	glaberrima	0.83	Iyengar and Sen, 1978 (Ref. 95)	1982
+Veronica	cymbalaria	0.83	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Cannabis	sativa	0.84	Sakamoto et al., 1998 (Ref. 414)	2005a
+Salvia	splendens	0.85	Olszewska and Osiecka, 1983 (Ref. 156)	1991
+Lycopersicon	pimpinellifolium	0.85	Bennett and Smith, 1976 (Ref. 2)	1976
+Haplopappus	ravenii	0.85	Jackson et al., 1993 (Ref. 244)	1995
+Polygonum	aviculare	0.85	Marie and Brown, 1993 (Ref. 290)	1997
+Amaranthus	retroflexus	0.85	Bennett et al., 1998 (Ref. 375)	2000
+Luffa	cylindrica	0.85	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Fedia	cf. cornucopiae	0.85	Hidalgo et al., 2010 (Ref. 638)	2012
+Centaurea	solstitialis	0.87	Bancheva & Greilhuber, 2006 (Ref. 529)	2011
+Wolffia	elongata	0.87	Wang et al., 2011 (Ref. 683)	2012
+Byblis	liniflora	0.89	Hanson et al., 2001 (Ref. 378)	2005a
+Sesamum	mulayanum	0.89	Hiremath et al., 2001 (Ref. 446)	2005a
+Digitaria	ternata	0.89	Adoukonou-Sagbadja et al., 2007 (Ref. 556)	2011
+Wolffia	columbiana	0.89	Wang et al., 2011 (Ref. 683)	2012
+Schouwia	purpurea	0.89	Lysák et al., 2007 (Ref. 602)	2011
+Fedia	cornucopiae	0.90	Hidalgo et al., 2010 (Ref. 638)	2012
+Cucumis	sativus	0.90	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Cucumis	africanus	0.90	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Crepis	fuliginosa	0.90	Wallace et al., 1972 (Ref. 29)	1976
+Cannabis	ruderalis	0.91	Kubesová et al., 2010 (Ref. 630)	2012
+Wolffia	borealis	0.91	Wang et al., 2011 (Ref. 683)	2012
+Atriplex	portulacoides	0.92	Dolenc Koce et al., 2008 (Ref. 580)	2011
+Digitaria	iburua	0.92	Adoukonou-Sagbadja et al., 2007 (Ref. 556)	2011
+Plantago	crypsoides	0.93	Badr et al., 1987 (Ref. 173)	1995
+Lycopersicon	hirsutum	0.93	Bennett and Smith, 1976 (Ref. 2)	1976
+Lycopersicon	humboldtii	0.93	Bennett and Smith, 1976 (Ref. 2)	1976
+Cicer	judaicum	0.93	Ohri and Pal, 1991 (Ref. 210)	1995
+Lycopersicon	cheesemanii	0.93	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Lupinus	angustifolius	0.93	Barlow, 1981 (Ref. 58)	1982
+Lupinus	cryptanthus	0.93	Naganowska et al., 2003 (Ref. 520)	2011
+Kickxia	scoaria	0.94	Suda et al., 2005 (Ref. 552)	2011
+Lupinus	linifolius	0.94	Naganowska et al., 2003 (Ref. 520)	2011
+Euryale	ferox	0.95	Diao et al., 2006 (Ref. 626)	2012
+Cicer	arietinum	0.95	Bennett and Smith, 1976 (Ref. 2)	1976
+Trifolium	bilineatum	0.95	Akmal, 1989 (Ref. 269-F)	1995
+Trifolium	quartinianum	0.95	Akmal, 1989 (Ref. 269-F)	1995
+Trifolium	steudneri	0.95	Akmal, 1989 (Ref. 269-F)	1995
+Amaranthus	spinosus	0.95	Bennett et al., 1998 (Ref. 375)	2000
+Atriplex	rosea	0.95	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Cucumis	melo	0.95	Ingle et al., 1975 (Ref. 69)	1982
+Veronica	peregrina	0.95	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Sesamum	latifolium	0.95	Hiremath et al., 2001 (Ref. 446)	2005a
+Calibrachoa	parviflora	0.96	Mishiba et al., 2000 (Ref. 387)	2005a
+Sesamum	indicum	0.97	Hiremath et al., 2001 (Ref. 446)	2005a
+Sida	spinosa	0.98	Bennett et al., 1998 (Ref. 375)	2000
+Crotalaria	retusa	0.98	Gupta, 1976 (Ref. 65)	1982
+Clarkia	biloba	0.98	Narayan, 1978 (Ref. 77)	1982
+Digitaria	exilis	0.98	Adoukonou-Sagbadja et al., 2007 (Ref. 556)	2011
+Centranthus	macrosiphon	0.99	Hidalgo et al., 2010 (Ref. 638)	2012
+Wolffiella	hyalina	0.99	Wang et al., 2011 (Ref. 683)	2012
+Vigna	glabrescens	1.00	Parida et al., 1990 (Ref. 166)	1995
+Lupinus	luteus	1.00	Bennett and Smith, 1976 (Ref. 2)	1976
+Lycopersicon	racemiflorum	1.00	Bennett and Smith, 1976 (Ref. 2)	1976
+Cassia	obtusifolia	1.00	Bennett et al., 1998 (Ref. 375)	2000
+Amsinckia	douglasiana	1.00	Hanson et al., 1999 (Ref. 377)	2000
+Silene	coeli-rosa	1.00	Miller and Lyndon, 1977 (Ref. 74)	1982
+Galium	aparine	1.03	Band, 1984 (Ref. 154)	1991
+Tephrosia	leptostachya	1.03	Raina et al., 1986 (Ref. 183)	1995
+Lycopersicon	esculentum	1.03	Bennett and Smith, 1976 (Ref. 2)	1976
+Lycopersicon	racemigerum	1.03	Bennett and Smith, 1976 (Ref. 2)	1976
+Spinacia	oleracea	1.03	Barlow, 1981 (Ref. 58)	1982
+Sorghum	macrospermum	1.04	Price et al., 2005 (Ref. 511)	2011
+Panicum	miliaceum	1.04	Kubesová et al., 2010 (Ref. 630)	2012
+Stellaria	media	1.05	Bennett, 1972 (Ref. 1)	1976
+Panicum	thermale	1.05	Galbraith et al., 1983 (Ref. 240)	1995
+Lupinus	hispanicus	1.05	Obermayer et al., 1999 (Ref. 369)	2000
+Spergula	arvensis	1.05	Bennett et al., 1998 (Ref. 375)	2000
+Benincasa	hispida	1.05	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Sorghum	ecarinatum	1.05	Price et al., 2005 (Ref. 511)	2011
+Suaeda	maritima	1.06	Dolenc Koce et al., 2008 (Ref. 580)	2011
+Xeranthemum	annuum	1.07	Garnatje et al., 2004 (Ref. 502)	2011
+Calandrinia	polyandra	1.07	Morgan & Westoby, 2005 (Ref. 526)	2011
+Cucumis	dinteri	1.08	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Luzula	lutea	1.08	Barlow and Nevin, 1976 (Ref. 36)	1976
+Crepis	zacintha	1.08	Brown and Jone, 1975 (Ref. 42)	1976
+Sorghum	stipoideum	1.10	Price et al., 2005 (Ref. 511)	2011
+Lamium	purpureum	1.10	Bennett, 1972 (Ref. 1)	1976
+Myosurus	minimus	1.10	Bennett and Smith, 1976 (Ref. 2)	1976
+Amsinckia	spectabilis	1.10	Hanson et al., 1999 (Ref. 377)	2000
+Lotus	edulis	1.10	Borsos, 1973 (Ref. 51)	1976
+Trichosanthes	anguina	1.10	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Clarkia	xantiana	1.10	Narayan, 1978 (Ref. 77)	1982
+Wolffia	cylindracea	1.10	Wang et al., 2011 (Ref. 683)	2012
+Crepis	pusilla	1.11	Enke et al., 2011 (Ref. 670)	2012
+Trifolium	repens	1.12	Vizintin et al., 2006 (Ref. 534)	2011
+Kochia	scoparia	1.12	Kubesová et al., 2010 (Ref. 630)	2012
+Cucumis	heptadactylus	1.13	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Vigna	aconitifolia	1.13	Lakhanpaul and Babu, 1991 (Ref. 279)	1997
+Glycine	max	1.13	Greilhuber and Obermayer, 1996 (Ref. 298)	1997
+Eschscholzia	californica	1.13	Bennett et al., 1999 (Ref. 373)	2000
+Brachycome	dichromosomatica	1.13	Houben et al., 2000 (Ref. 376)	2000
+Lotus	arenarius	1.13	Borsos, 1973 (Ref. 51)	1976
+Crotalaria	lanceolata	1.13	Gupta, 1976 (Ref. 65)	1982
+Carthamus	leucocaulos	1.13	Garnatje et al., 2006 (Ref. 536)	2011
+Plantago	arenaria	1.14	Sen and Sharma, 1990 (Ref. 388)	2005a
+Sorghum	intrans	1.14	Price et al., 2005 (Ref. 511)	2011
+Impatiens	glandulifera	1.15	Mowforth, 1986 (Ref. 158)	1991
+Glycine	soja	1.15	Hammatt et al., 1991 (Ref. 165)	1995
+Lycopersicon	peruvianum	1.15	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Daucus	aureus	1.15	Owens, 1974 (Ref. 25)	1976
+Agoseris	heterophylla	1.15	Price and Bachmann, 1975 (Ref. 47)	1976
+Sorghum	bulbosum	1.15	Price et al., 2005 (Ref. 511)	2011
+Plantago	afra	1.15	Sen and Sharma, 1990 (Ref. 388)	2005a
+Ambrosia	artemisiifolia	1.16	Kubesová et al., 2010 (Ref. 630)	2012
+Hypochaeris	laevigata	1.17	Cerbah M et al., 1999 (Ref. 666)	2012
+Poa	infirma	1.18	Bennett, 1972 (Ref. 1)	1976
+Lapsana	communis	1.18	Band, 1984 (Ref. 154)	1991
+Tagetes	patula	1.18	Bennett et al., 1999 (Ref. 373)	2000
+Atriplex	hortensis	1.18	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Silene	pendula	1.18	Siroký et al., 2001 (Ref. 437)	2005a
+Sesamum	laciniatum	1.18	Hiremath et al., 2001 (Ref. 446)	2005a
+Verbena	rigida	1.19	Hanson et al., 2005 (Ref. 612)	2011
+Oenothera	lamarckiana	1.19	Zonneveld et al., 2005 (Ref. 466)	2005b
+Cucumis	metuliferus	1.20	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Anethum	graveolens	1.20	Olszewska and Osiecka, 1983 (Ref. 156)	1991
+Amaranthus	edulis	1.20	Ohri et al., 1981 (Ref. 209)	1995
+Microseris	douglasii	1.20	Michaelson et al., 1991 (Ref. 229)	1995
+Digitaria	sanguinalis	1.20	Bennett et al., 1998 (Ref. 375)	2000
+Clarkia	lingulata	1.20	Narayan, 1978 (Ref. 77)	1982
+Wolffia	neglecta	1.20	Wang et al., 2011 (Ref. 683)	2012
+Sesamum	capense	1.21	Hiremath et al., 2001 (Ref. 446)	2005a
+Lupinus	texensis	1.22	Price et al., 2005 (Ref. 511)	2011
+Carthamus	nitidus	1.22	Garnatje et al., 2006 (Ref. 536)	2011
+Cucumis	dipsaceus	1.23	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Cucumis	humifructus	1.23	Ramachandran and Narayan, 1985 (Ref. 127)	1991
+Centaurium	erythraea	1.23	Band, 1984 (Ref. 154)	1991
+Senecio	vernalis	1.23	Bennett and Smith, 1976 (Ref. 2)	1976
+Amaranthus	tricolor	1.23	Ohri et al., 1981 (Ref. 209)	1995
+Lycopersicon	pennellii	1.23	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Rhynchosia	aurea	1.23	Ohri, 1996 (Ref. 303)	1997
+Setaria	glauca	1.23	Bennett et al., 1998 (Ref. 375)	2000
+Crotalaria	juncea	1.23	Gupta, 1976 (Ref. 65)	1982
+Physorhynchus	chamaerapistrum	1.24	Lysák et al., 2007 (Ref. 602)	2011
+Nemophila	menziesii	1.25	Hanson et al., 2002 (Ref. 465)	2005a
+Sorghum	laxiflorum	1.25	Price et al., 2005 (Ref. 511)	2011
+Artedia	squamata	1.25	Le et al., 1978 (Ref. 118)	1991
+Plantago	lagopus	1.25	Badr et al., 1987 (Ref. 173)	1995
+Cicer	cuneatum	1.25	Ohri and Pal, 1991 (Ref. 210)	1995
+Eleusine	verticillata	1.25	Hiremath and Salimath, 1991 (Ref. 218)	1995
+Daucus	syrticus	1.25	Owens, 1974 (Ref. 25)	1976
+Galinsoga	parviflora	1.25	Bennett et al., 1998 (Ref. 375)	2000
+Crotalaria	verrucosa	1.25	Gupta, 1976 (Ref. 65)	1982
+Clarkia	cylindrica	1.25	Narayan, 1978 (Ref. 77)	1982
+Echinops	strigosus	1.25	Garnatje et al., 2004 (Ref. 502)	2011
+Sorghum	matarankense	1.26	Price et al., 2005 (Ref. 511)	2011
+Arachis	duranensis	1.27	Temsch and Greilhuber, 2001 (Ref. 396)	2005a
+Cicer	bijugum	1.28	Ohri and Pal, 1991 (Ref. 210)	1995
+Cicer	pinnatifidum	1.28	Ohri and Pal, 1991 (Ref. 210)	1995
+Clarkia	dudleyana	1.28	Narayan, 1978 (Ref. 77)	1982
+Cajanus	albicans	1.29	Ohri and Singh, 2002 (Ref. 443)	2005a
+Digitaria	ciliaris	1.29	Adoukonou-Sagbadja et al., 2007 (Ref. 556)	2011
+Mercurialis	annua	1.30	Obbard et al., 2006 (Ref. 544)	2011
+Juncus	bufonius	1.30	Band, 1984 (Ref. 154)	1991
+Eleusine	multiflora	1.30	Hiremath and Salimath, 1991 (Ref. 218)	1995
+Hypochaeris	glabra	1.30	Marañón and Grubb, 1993 (Ref. 274)	1997
+Cicer	echinospermum	1.30	Galasso et al., 1996 (Ref. 277)	1997
+Amsinckia	furcata	1.30	Hanson et al., 1999 (Ref. 377)	2000
+Lotus	ornithopoides	1.30	Borsos, 1973 (Ref. 51)	1976
+Carthamus	oxyacantha	1.31	Garnatje et al., 2006 (Ref. 536)	2011
+Salsola	soda	1.31	Dolenc Koce et al., 2008 (Ref. 580)	2011
+Navarretia	squarrosa	1.32	Hanson et al., 2001 (Ref. 378)	2005a
+Wolffia	globosa	1.32	Wang et al., 2011 (Ref. 683)	2012
+Tephrosia	incana	1.33	Raina et al., 1986 (Ref. 183)	1995
+Echinochloa	frumentacea	1.33	Bennett and Smith, 1976 (Ref. 2)	1976
+Senecio	leucanthemifolius	1.33	Bennett and Smith, 1976 (Ref. 2)	1976
+Cicer	reticulatum	1.33	Galasso et al., 1996 (Ref. 277)	1997
+Tropaeolum	majus	1.33	Nagl, 1976 (Ref. 85)	1982
+Carthamus	persicus	1.33	Garnatje et al., 2006 (Ref. 536)	2011
+Chenopodium	opulifolium	1.33	Ohri, 2002 (Ref. 455)	2005a
+Digitaria	lecardii	1.33	Adoukonou-Sagbadja et al., 2007 (Ref. 556)	2011
+Sesamum	radiatum	1.33	Hiremath et al., 2001 (Ref. 446)	2005a
+Torilis	leptophylla	1.35	Le et al., 1978 (Ref. 118)	1991
+Echinochloa	crus-galli	1.35	Olszewska and Osiecka, 1982 (Ref. 155)	1991
+Echinochloa	colonum	1.35	Bennett et al., 1998 (Ref. 375)	2000
+Carthamus	dentatus	1.35	Garnatje et al., 2006 (Ref. 536)	2011
+Carthamus	gypsicola	1.36	Garnatje et al., 2006 (Ref. 536)	2011
+Hypochaeris	achyrophorus	1.36	Cerbah M et al., 1999 (Ref. 666)	2012
+Petunia	integrifolia	1.36	Mishiba et al., 2000 (Ref. 387)	2005a
+Sesamum	schinzianum	1.37	Hiremath et al., 2001 (Ref. 446)	2005a
+Carthamus	tenuis	1.37	Garnatje et al., 2006 (Ref. 536)	2011
+Caucalis	daucoides	1.38	Le et al., 1978 (Ref. 118)	1991
+Senecio	flavus	1.38	Bennett and Smith, 1976 (Ref. 2)	1976
+Sorghum	exstans	1.38	Price et al., 2005 (Ref. 511)	2011
+Salicornia	europaea	1.38	Dolenc Koce et al., 2008 (Ref. 580)	2011
+Limnanthes	douglasii	1.39	Hanson et al., 2001 (Ref. 379)	2005a
+Petunia	occidentalis	1.39	Mishiba et al., 2000 (Ref. 387)	2005a
+Carthamus	tinctorius	1.40	Garnatje et al., 2006 (Ref. 536)	2011
+Phaseolus	angularis	1.40	Ayonoadu, 1974 (Ref. 28)	1976
+Ionopsidium	savianum	1.40	Ceccarelli et al., 1998 (Ref. 313)	2000
+Abutilon	theophrasti	1.40	Bennett et al., 1998 (Ref. 375)	2000
+Veronica	hederifolia	1.41	Albach & Greilhuber, 2003 (Ref. 478)	2011
+Carthamus	palaestinus	1.41	Garnatje et al., 2006 (Ref. 536)	2011
+Plantago	notata	1.43	Badr et al., 1987 (Ref. 173)	1995
+Nicotiana	trigonophylla	1.43	Narayan, 1987 (Ref. 199)	1995
+Chenopodium	ugandae	1.43	Ohri, 2002 (Ref. 455)	2005a
+Fagopyrum	sagittatum	1.44	Slomka et al., 2011 (Ref. 679)	2012
+Blackstonia	perfoliata	1.45	Band, 1984 (Ref. 154)	1991
+Raphanus	sativus	1.45	Olszewska and Osiecka, 1983 (Ref. 156)	1991
+Sisyrinchium	micranthum	1.45	Kenton et al., 1986 (Ref. 177)	1995
+Eleusine	tristachya	1.45	Hiremath and Salimath, 1991 (Ref. 218)	1995
+Callitriche	regis-jubae	1.45	Pijnacker and Schotsman, 1988 (Ref. 266)	1995
+Calycadenia	pauciflora	1.48	Bennett and Smith, 1976 (Ref. 2)	1976
+Carthamus	boissieri	1.48	Garnatje et al., 2006 (Ref. 536)	2011
+Chenopodium	quinoa	1.48	Palomino et al., 2008 (Ref. 682)	2012
+Chenopodium	berlandieri	1.49	Palomino et al., 2008 (Ref. 682)	2012
+Carthamus	anatolicus	1.50	Garnatje et al., 2006 (Ref. 536)	2011
+Panicum	esculentum	1.50	Bennett and Smith, 1976 (Ref. 2)	1976
+Reichardia	picroides	1.50	Siljak-Yakovlev et al., 1998 (Ref. 356)	2000
+Krigia	virginica	1.50	Bachmann et al., 1975 (Ref. 48)	1976
+Clarkia	arcuata	1.50	Narayan, 1978 (Ref. 77)	1982
+Carthamus	glaucus	1.50	Garnatje et al., 2006 (Ref. 536)	2011
+Brassica	juncea	1.53	Verma and Rees, 1974 (Ref. 27)	1976
+Hibiscus	cannabinus	1.53	Bennett et al., 1999 (Ref. 373)	2000
+Carthamus	alexandrinus	1.53	Garnatje et al., 2006 (Ref. 536)	2011
+Nicotiana	obtusifolia	1.55	Leitch et al., 2008 (Ref. 566)	2011
+Coreopsis	bicolor	1.55	Olszewska and Osiecka, 1983 (Ref. 156)	1991
+Cosmos	bipinnatus	1.55	Ohri et al., 1988 (Ref. 194)	1995
+Celosia	cristata	1.55	Nath et al., 1992 (Ref. 249)	1995
+Senecio	viscosus	1.55	Nagl et al., 1983 (Ref. 457)	2005a
+Senecio	vulgaris	1.58	Bennett et al., 1976 (Ref. 108)	1991
+Brassica	carinata	1.58	Verma and Rees, 1974 (Ref. 27)	1976
+Sesamum	occidentale	1.58	Hiremath et al., 2001 (Ref. 446)	2005a
+Chenopodium	bushianum	1.59	Ohri, 2002 (Ref. 455)	2005a
+Torilis	nodosa	1.60	Le et al., 1978 (Ref. 118)	1991
+Sonchus	oleraceus agg.	1.60	Band, 1984 (Ref. 154)	1991
+Bidens	frondosa	1.60	Kubesová et al., 2010 (Ref. 630)	2012
+Humulus	japonicus	1.60	Grabowska-Joachimiak et al., 2006 (Ref. 543)	2011
+Mercurialis	canariensis	1.62	Obbard et al., 2006 (Ref. 544)	2011
+Coix	lacryma-jobi	1.63	Bennett and Smith, 1976 (Ref. 2)	1976
+Eleusine	coracana	1.63	Bennett and Smith, 1976 (Ref. 2)	1976
+Celosia	trigyna	1.63	Nath et al., 1992 (Ref. 249)	1995
+Setaria	faberi	1.63	Bennett et al., 1998 (Ref. 375)	2000
+Chenopodium	album	1.63	Ohri, 2002 (Ref. 455)	2005a
+Celosia	plumosa	1.65	Nath et al., 1992 (Ref. 249)	1995
+Celosia	argentea	1.65	Nath et al., 1992 (Ref. 249)	1995
+Phaseolus	leucanthus	1.65	Ayonoadu, 1974 (Ref. 28)	1976
+Abelmoschus	esculentus	1.65	Bennett et al., 1999 (Ref. 373)	2000
+Senecio	glossanthus	1.68	Lawrence, 1985 (Ref. 114)	1991
+Sorghum	bicolor	1.68	Laurie and Bennett, 1985 (Ref. 132)	1991
+Portulaca	oleraceae	1.68	Bennett et al., 1997 (Ref. 270)	1997
+Agrostis	pourretii	1.68	Marañón and Grubb, 1993 (Ref. 274)	1997
+Panicum	dichotomiflorum	1.68	Bennett et al., 1998 (Ref. 375)	2000
+Sorghum	brachypodum	1.68	Price et al., 2005 (Ref. 511)	2011
+Sesamum	alatum	1.69	Hiremath et al., 2001 (Ref. 446)	2005a
+Callitriche	palustris	1.70	Pijnacker and Schotsman, 1988 (Ref. 266)	1995
+Hedypnois	cretica	1.70	Marañón and Grubb, 1993 (Ref. 274)	1997
+Wolffia	angusta	1.70	Wang et al., 2011 (Ref. 683)	2012
+Wolffia	microscopica	1.70	Wang et al., 2011 (Ref. 683)	2012
+Datura	quercifolia	1.73	Bennett and Smith, 1976 (Ref. 2)	1976
+Coleus	blumei	1.73	Galbraith et al., 1983 (Ref. 240)	1995
+Bidens	pilosa	1.73	Bennett et al., 1997 (Ref. 270)	1997
+Phalaris	paradoxa	1.75	Bennett and Smith, 1976 (Ref. 2)	1976
+Borago	officinalis	1.75	Bennett et al., 1999 (Ref. 373)	2000
+Anagallis	arvensis	1.75	Bennett et al., 1998 (Ref. 375)	2000
+Artemisia	scoparia	1.77	Garcia et al., 2004 (Ref. 521)	2011
+Haplopappus	wigginsii	1.78	Jackson et al., 1993 (Ref. 244)	1995
+Vicia	lunata	1.83	Maxted et al., 1991 (Ref. 190)	1995
+Zingeria	biebersteiniana	1.85	Bennett et al., 1976 (Ref. 108)	1991
+Collinsia	verna	1.85	Greenlee et al., 1984 (Ref. 148)	1991
+Sonchus	asper	1.85	Bachmann et al., 1975 (Ref. 48)	1976
+Sorghum	angustum	1.85	Price et al., 2005 (Ref. 511)	2011
+Bromus	pumilio	1.88	Bennett and Smith, 1976 (Ref. 2)	1976
+Artemisia	annua	1.88	Geber and Hasibeder, 1980 (Ref. 98)	1982
+Chardinia	orientalis	1.88	Garnatje et al., 2004 (Ref. 502)	2011
+Daucus	subsessilis	1.90	Owens, 1974 (Ref. 25)	1976
+Ranunculus	lateriflorus	1.90	Smith and Bennett, 1975 (Ref. 45)	1976
+Xeranthemum	cylindraceum	1.91	Garnatje et al., 2004 (Ref. 502)	2011
+Ambrosia	trifida	1.91	Kubesová et al., 2010 (Ref. 630)	2012
+Vicia	monantha	1.93	Raina and Rees, 1983 (Ref. 112)	1991
+Echinops	nanus	1.93	Garnatje et al., 2004 (Ref. 502)	2011
+Crepis	foetida	1.95	Brown and Jone, 1975 (Ref. 42)	1976
+Mercurialis	annua	1.95	Obbard et al., 2006 (Ref. 544)	2011
+Vicia	cordata	1.98	Raina and Bisht, 1988 (Ref. 189)	1995
+Solanum	luteum	2.00	Bennett et al., 1976 (Ref. 108)	1991
+Phalaris	caroliniana	2.00	Kadir, 1974 (Ref. 26)	1976
+Galinsoga	quadriradiata	2.02	Kubesová et al., 2010 (Ref. 630)	2012
+Phalaris	angusta	2.03	Kadir, 1974 (Ref. 26)	1976
+Haplopappus	gracilis	2.05	Bennett, 1972 (Ref. 1)	1976
+Torilis	arvensis	2.05	Le et al., 1978 (Ref. 118)	1991
+Vicia	picta	2.05	Rees et al., 1966 (Ref. 20)	1976
+Collinsia	heterophylla	2.05	Greilhuber, 1988 (Ref. 203)	1995
+Datura	stramonium	2.05	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Momordica	charantia	2.05	Ingle et al., 1975 (Ref. 69)	1982
+Clarkia	amoena	2.05	Narayan, 1978 (Ref. 77)	1982
+Bunias	erucago	2.07	Greilhuber and Obermayer, 1999 (Ref. 393)	2005a
+Collomia	grandiflora	2.08	Kubesová et al., 2010 (Ref. 630)	2012
+Crepis	sancta	2.09	Dimitrova and Greilhuber, 2000 (Ref. 394)	2005a
+Sorghum	purpureosericeum	2.09	Price et al., 2005 (Ref. 511)	2011
+Agrostemma	githago	2.10	Olszewska and Osiecka, 1983 (Ref. 156)	1991
+Guizotia	villosa	2.10	Hiremath et al., 1992 (Ref. 212)	1995
+Crepis	capillaris	2.10	Evans et al., 1972 (Ref. 7)	1976
+Lolium	canariense	2.13	Hutchinson et al., 1979 (Ref. 102)	1982
+Sorghum	versicolor	2.13	Laurie and Bennett, 1985 (Ref. 132)	1991
+Clarkia	franciscana	2.13	Narayan, 1978 (Ref. 77)	1982
+Impatiens	parviflora	2.13	Kubesová et al., 2010 (Ref. 630)	2012
+Atriplex	patula	2.15	Band, 1984 (Ref. 154)	1991
+Lolium	italicum	2.15	Rees and Jones, 1967 (Ref. 17)	1976
+Datura	meteloides	2.15	Bennett and Smith, 1976 (Ref. 2)	1976
+Guizotia	schimperi	2.15	Hiremath et al., 1992 (Ref. 212)	1995
+Montia	perfoliata	2.18	Bennett, 1972 (Ref. 1)	1976
+Zizania	aquatica	2.18	Barlow, 1981 (Ref. 58)	1982
+Chenopodium	giganteum	2.20	Ohri, 2002 (Ref. 455)	2005a
+Vicia	dasycarpa	2.20	Raina and Rees, 1983 (Ref. 112)	1991
+Xeranthemum	inapertum	2.22	Garnatje et al., 2004 (Ref. 502)	2011
+Vicia	amphicarpa	2.23	Martin and Shanks, 1966 (Ref. 19)	1976
+Nicotiana	glutinosa	2.24	Leitch et al., 2008 (Ref. 566)	2011
+Vicia	eriocarpa	2.25	Raina and Rees, 1983 (Ref. 112)	1991
+Vicia	sativa	2.25	Rees et al., 1966 (Ref. 20)	1976
+Vicia	angustifolia	2.25	Rees et al., 1966 (Ref. 20)	1976
+Hypochaeris	microcephala	2.25	Cerbah et al., 1995 (Ref. 280)	1997
+Pennisetum	violaceum	2.25	Martel et al., 1997 (Ref. 308)	2000
+Pennisetum	mollissimum	2.25	Martel et al., 1997 (Ref. 308)	2000
+Clarkia	rubicunda	2.25	Narayan, 1978 (Ref. 77)	1982
+Clarkia	lasseninsis	2.25	Narayan, 1978 (Ref. 77)	1982
+Torilis	japonica	2.28	Le et al., 1978 (Ref. 118)	1991
+Nicotiana	petunioides	2.28	Narayan, 1987 (Ref. 199)	1995
+Datura	innoxia	2.28	Bennett and Smith, 1976 (Ref. 2)	1976
+Datura	discolor	2.28	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	villosa	2.28	Chooi WY., 1971 (Ref. 21)	1976
+Digitaria	setigera	2.28	Marie and Brown, 1993 (Ref. 290)	1997
+Machaeranthera	parviflora	2.28	Stucky and Jackson, 1975 (Ref. 94)	1982
+Consolida	orientalis	2.28	Kubesová et al., 2010 (Ref. 630)	2012
+Vulpia	geniculata	2.30	Marañón and Grubb, 1993 (Ref. 274)	1997
+Matricaria	matricarioides	2.33	Bennett, 1972 (Ref. 1)	1976
+Papaver	ocellatum	2.33	Srivastava and Lavania, 1991 (Ref. 167)	1995
+Nicotiana	linearis	2.33	Narayan, 1987 (Ref. 199)	1995
+Chenopodium	album	2.33	Bennett et al., 1998 (Ref. 375)	2000
+Crepis	setosa	2.33	Brown and Jone, 1975 (Ref. 42)	1976
+Vicia	pilosa	2.40	Raina and Rees, 1983 (Ref. 112)	1991
+Pennisetum	americanum	2.40	Bennett and Smith, 1987 (Ref. 164)	1995
+Vicia	disperma	2.40	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Carthamus	lanatus	2.40	Garnatje et al., 2006 (Ref. 536)	2011
+Nicotiana	undulata	2.42	Leitch et al., 2008 (Ref. 566)	2011
+Nicotiana	rotundifolia	2.43	Narayan, 1987 (Ref. 199)	1995
+Helianthus	annuus	2.43	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Matricaria	discoidea	2.45	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Papaver	hybridum	2.48	Srivastava and Lavania, 1991 (Ref. 167)	1995
+Nicotiana	attenuata	2.48	Leitch et al., 2008 (Ref. 566)	2011
+Arachis	spegazinii	2.50	Resslar et al., 1981 (Ref. 115)	1991
+Pennisetum	schweinfurthii	2.50	Martel et al., 1997 (Ref. 308)	2000
+Daucus	muricatus	2.53	Owens, 1974 (Ref. 25)	1976
+Coriandrum	sativum	2.54	Loureiro et al., 2007 (Ref. 563)	2011
+Vicia	palaestina	2.55	Raina and Bisht, 1988 (Ref. 189)	1995
+Eleusine	africana	2.55	Hiremath and Salimath, 1991 (Ref. 218)	1995
+Cenchrus	echinatus	2.55	Bennett et al., 1998 (Ref. 375)	2000
+Senecio	cambrensis	2.58	Bennett and Smith, 1976 (Ref. 2)	1976
+Xanthium	albinum	2.59	Kubesová et al., 2010 (Ref. 630)	2012
+Papaver	rhoeas	2.63	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	pubescens	2.63	Chooi WY., 1971 (Ref. 21)	1976
+Vicia	lathyroides	2.63	Chooi WY., 1971 (Ref. 21)	1976
+Setaria	pumila	2.63	Le et al., 1998 (Ref. 330)	2000
+Senecio	teneriffae	2.63	Suda et al., 2003 (Ref. 477)	2011
+Collinsia	tinctoria	2.65	Greenlee et al., 1984 (Ref. 148)	1991
+Lactuca	sativa	2.65	Michaelson et al., 1991 (Ref. 229)	1995
+Zingeria	trichopoda	2.65	Kotseruba et al., 2003 (Ref. 515)	2011
+Pennisetum	glaucum	2.68	Bennett and Smith, 1976 (Ref. 2)	1976
+Arachis	batizocoi	2.68	Singh et al., 1996 (Ref. 297)	1997
+Agrostis	alba	2.68	Sugiyama S., 2005 (Ref. 653)	2012
+Silene	latifolia	2.70	Costich et al., 1991 (Ref. 291)	1997
+Zea	mays	2.73	Bennett et al., 1976 (Ref. 108)	1991
+Callitriche	brutia	2.73	Pijnacker and Schotsman, 1988 (Ref. 266)	1995
+Mibora	minima	2.75	Bennett, 1972 (Ref. 1)	1976
+Lolium	loliaceum	2.75	Hutchinson et al., 1979 (Ref. 102)	1982
+Senecio	crassifolius	2.75	Bennett and Smith, 1976 (Ref. 2)	1976
+Papaver	gracile	2.78	Srivastava and Lavania, 1991 (Ref. 167)	1995
+Orobanche	picridis	2.79	Weiss-Schneeweiss et al., 2005 (Ref. 531)	2011
+Arachis	ipaensis	2.83	Singh et al., 1996 (Ref. 297)	1997
+Orobanche	crenata	2.84	Weiss-Schneeweiss et al., 2005 (Ref. 531)	2011
+Pennisetum	polystachyon	2.85	Martel et al., 1997 (Ref. 308)	2000
+Crepis	rubra	2.85	Brown and Jone, 1975 (Ref. 42)	1976
+Achyrocline	flaccida	2.87	Mazzella et al., 2010 (Ref. 660)	2012
+Achyrocline	satureioides	2.87	Mazzella et al., 2010 (Ref. 660)	2012
+Arachis	hypogaea	2.87	Temsch and Greilhuber, 2000 (Ref. 395)	2005a
+Poa	annua	2.88	Bennett, 1972 (Ref. 1)	1976
+Milium	vernale	2.88	Bennett and Thomas, 1991 (Ref. 197)	1995
+Nicotiana	miersii	2.88	Narayan, 1987 (Ref. 199)	1995
+Melandrium	album	2.88	Vagera et al., 1994 (Ref. 231)	1995
+Vicia	cirrhosa	2.89	Suda et al., 2005 (Ref. 552)	2011
+Briza	minor	2.90	Schifino and Winge, 1983 (Ref. 117)	1991
+Papaver	commutatum	2.90	Srivastava and Lavania, 1991 (Ref. 167)	1995
+Crepis	neglecta	2.90	Brown and Jone, 1975 (Ref. 42)	1976
+Aira	praecox	2.93	Albers, 1980 (Ref. 73)	1982
+Xeranthemum	longepapposum	2.93	Garnatje et al., 2004 (Ref. 502)	2011
+Nicotiana	paniculata	2.95	Leitch et al., 2008 (Ref. 566)	2011
+Achyrocline	crassiuscula	2.95	Mazzella et al., 2010 (Ref. 660)	2012
+Nicotiana	corymbosa	2.95	Narayan, 1987 (Ref. 199)	1995
+Tolpis	barbata	2.95	Marañón and Grubb, 1993 (Ref. 274)	1997
+Ranunculus	alpestris	2.95	Goepfert, 1974 (Ref. 44)	1976
+Arachis	monticola	2.95	Temsch and Greilhuber, 2000 (Ref. 395)	2005a
+Turgenia	latifolia	2.98	Le et al., 1978 (Ref. 118)	1991
+Vicia	biennis	2.98	Chooi WY., 1971 (Ref. 21)	1976
+Daucus	littoralis	2.98	Owens, 1974 (Ref. 25)	1976
+Cosmos	sulphureus	3.00	Ohri et al., 1988 (Ref. 194)	1995
+Nicotiana	exigua	3.00	Narayan, 1987 (Ref. 199)	1995
+Crepis	alpina	3.00	Brown and Jone, 1975 (Ref. 42)	1976
+Aira	elegantissima	3.00	Albers, 1980 (Ref. 73)	1982
+Achyrocline	alata	3.02	Mazzella et al., 2010 (Ref. 660)	2012
+Lolium	remotum	3.03	Hutchinson et al., 1979 (Ref. 102)	1982
+Aster	riparius	3.03	Stucky and Jackson, 1975 (Ref. 94)	1982
+Nicotiana	occidentalis	3.05	Narayan, 1987 (Ref. 199)	1995
+Clarkia	concinna	3.05	Narayan, 1978 (Ref. 77)	1982
+Rhinanthus	glaber	3.05	Zonneveld et al., 2005 (Ref. 466)	2005b
+Nicotiana	pauciflora	3.08	Narayan, 1987 (Ref. 199)	1995
+Artemisia	sieversiana	3.09	Garcia et al., 2004 (Ref. 521)	2011
+Solanum	nigrum	3.10	Bennett et al., 1976 (Ref. 108)	1991
+Papaver	glaucum	3.10	Srivastava and Lavania, 1991 (Ref. 167)	1995
+Stephanomeria	exigua	3.13	Narayan, 1978 (Ref. 77)	1982
+Senecio	gregorii	3.15	Lawrence, 1985 (Ref. 114)	1991
+Nicotiana	gossei	3.15	Narayan, 1987 (Ref. 199)	1995
+Xanthium	strumarium	3.15	Bennett et al., 1998 (Ref. 375)	2000
+Clarkia	deflexa	3.15	Narayan, 1978 (Ref. 77)	1982
+Nicotiana	knightiana	3.16	Leitch et al., 2008 (Ref. 566)	2011
+Iva	xanthiifolia	3.17	Kubesová et al., 2010 (Ref. 630)	2012
+Lolium	persicum	3.18	Hutchinson et al., 1979 (Ref. 102)	1982
+Helianthus	neglectus	3.20	Sims and Price, 1985 (Ref. 116)	1991
+Desmazeria	sicula	3.20	Bennett and Smith, 1987 (Ref. 164)	1995
+Nicotiana	benthamiana	3.20	Narayan, 1987 (Ref. 199)	1995
+Bidens	connata	3.22	Kubesová et al., 2010 (Ref. 630)	2012
+Ranunculus	sardous	3.23	Smith and Bennett, 1975 (Ref. 45)	1976
+Nicotiana	maritima	3.25	Narayan, 1987 (Ref. 199)	1995
+Bromus	tectorum	3.25	Bennett and Smith, 1976 (Ref. 2)	1976
+Acantholepis	orientalis	3.26	Garnatje et al., 2004 (Ref. 502)	2011
+Periballia	involucrata	3.28	Albers, 1980 (Ref. 73)	1982
+Helianthus	debilis	3.30	Sims and Price, 1985 (Ref. 116)	1991
+Nicotiana	acuminata	3.30	Narayan, 1987 (Ref. 199)	1995
+Sorghum	versicolor	3.34	Price et al., 2005 (Ref. 511)	2011
+Bromus	sterilis	3.35	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	grandiflora	3.35	Chooi WY., 1971 (Ref. 21)	1976
+Nicotiana	excelsior	3.38	Narayan, 1987 (Ref. 199)	1995
+Crepis	tectorum	3.38	Brown and Jone, 1975 (Ref. 42)	1976
+Helianthus	petiolaris	3.40	Sims and Price, 1985 (Ref. 116)	1991
+Desmazeria	rigidum	3.40	Bennett and Smith, 1987 (Ref. 164)	1995
+Sorghum	roxburghii	3.43	Paroda and Rees, 1971 (Ref. 18)	1976
+Hordeum	euclaston	3.43	Jakob et al., 2004 (Ref. 491)	2011
+Phelipanche	nana	3.43	Weiss-Schneeweiss et al., 2005 (Ref. 531)	2011
+Claytonia	alsinoides	3.45	Kubesová et al., 2010 (Ref. 630)	2012
+Senecio	bipinnatisectus	3.50	Lawrence, 1985 (Ref. 114)	1991
+Vicia	qatmensis	3.50	Maxted et al., 1991 (Ref. 190)	1995
+Cuminum	cyminum	3.50	Chattopadhyay and Sharma, 1990 (Ref. 206)	1995
+Lagurus	ovatus	3.50	Bennett et al., 1999 (Ref. 373)	2000
+Hordeum	intercedens	3.51	Jakob et al., 2004 (Ref. 491)	2011
+Helianthus	praecox	3.53	Sims and Price, 1985 (Ref. 116)	1991
+Carthamus	creticus	3.53	Garnatje et al., 2006 (Ref. 536)	2011
+Euchlaena	mexicana	3.55	Barlow and Rathfelder, 1984 (Ref. 123)	1991
+Celosia	argentea	3.55	Nath et al., 1992 (Ref. 249)	1995
+Nicotiana	nudicaulis	3.56	Leitch et al., 2008 (Ref. 566)	2011
+Senecio	discifolius	3.58	Lawrence, 1985 (Ref. 114)	1991
+Vicia	tetrasperma	3.60	Raina and Bisht, 1988 (Ref. 189)	1995
+Tuberaria	guttata	3.61	Zonneveld et al., 2005 (Ref. 466)	2005b
+Vicia	barbazitae	3.63	Maxted et al., 1991 (Ref. 190)	1995
+Helianthus	niveus	3.65	Sims and Price, 1985 (Ref. 116)	1991
+Xolantha	guttata	3.65	Boscaiu et al., 2008 (Ref. 567)	2011
+Phalaris	brachystachys	3.70	Kadir, 1974 (Ref. 26)	1976
+Papaver	dubium	3.73	Srivastava and Lavania, 1991 (Ref. 167)	1995
+Carthamus	turkestanicus	3.73	Garnatje et al., 2006 (Ref. 536)	2011
+Senecio	glossanthus	3.75	Lawrence, 1985 (Ref. 114)	1991
+Alocasia	hilobeauty	3.76	Ghosh et al., 2001 (Ref. 411)	2005a
+Papaver	somniferum	3.80	Bennett, 1972 (Ref. 1)	1976
+Chamaemelum	mixtum	3.80	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Phalaris	canariensis	3.83	Kadir, 1974 (Ref. 26)	1976
+Sorghum	amplum	3.85	Price et al., 2005 (Ref. 511)	2011
+Guizotia	abyssinica	3.85	Hiremath et al., 1992 (Ref. 212)	1995
+Matricaria	chamomilla	3.88	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Nicotiana	goodspeedii	3.90	Narayan, 1987 (Ref. 199)	1995
+Rhinanthus	minor	3.95	Nagl and Fusenig, 1979 (Ref. 81)	1982
+Vicia	hirsuta	3.98	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Papaver	setigerum	4.00	Srivastava and Lavania, 1991 (Ref. 167)	1995
+Avena	strigosa	4.00	Bennett and Smith, 1976 (Ref. 2)	1976
+Ranunculus	sceleratus	4.00	Smith and Bennett, 1975 (Ref. 45)	1976
+Nicotiana	clevelandii	4.14	Leitch et al., 2008 (Ref. 566)	2011
+Nicotiana	plumbaginifolia	4.15	Narayan, 1987 (Ref. 199)	1995
+Vicia	epetiolaris	4.15	Naranjo et al., 1998 (Ref. 415)	2005a
+Nicotiana	bigelovii	4.18	Narayan, 1987 (Ref. 199)	1995
+Phelipanche	mutelii	4.19	Weiss-Schneeweiss et al., 2005 (Ref. 531)	2011
+Vicia	ervilia	4.20	Raina and Rees, 1983 (Ref. 112)	1991
+Lens	culinaris	4.20	Arumuganathan and Earle, 1991 (Ref. 227)	1995
+Nicotiana	quadrivalvis	4.25	Leitch et al., 2008 (Ref. 566)	2011
+Phelipanche	pulchella	4.27	Weiss-Schneeweiss et al., 2005 (Ref. 531)	2011
+Delphinium	consolida	4.28	Bennett and Smith, 1976 (Ref. 2)	1976
+Carduus	pycnocephalus	4.28	Marañón and Grubb, 1993 (Ref. 274)	1997
+Vicia	galeata	4.30	Chooi WY., 1971 (Ref. 21)	1976
+Vicia	vicioides	4.33	Raina and Rees, 1983 (Ref. 112)	1991
+Vicia	incisaeformis	4.33	Raina and Rees, 1983 (Ref. 112)	1991
+Nicotiana	langsdorffii	4.35	Narayan, 1987 (Ref. 199)	1995
+Taeniatherum	caput-medusae	4.38	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Helianthus	bolanderi	4.40	Sims and Price, 1985 (Ref. 116)	1991
+Sorghum	virgatum	4.40	Paroda and Rees, 1971 (Ref. 18)	1976
+Avena	hirtula	4.40	Bennett and Smith, 1976 (Ref. 2)	1976
+Avena	nudi-brevis	4.40	Bullen and Rees, 1972 (Ref. 34)	1976
+Ranunculus	chius	4.40	Smith and Bennett, 1975 (Ref. 45)	1976
+Helianthus	argophyllus	4.43	Sims and Price, 1985 (Ref. 116)	1991
+Pisum	humile	4.43	Baranyi and Greilhuber, 1996 (Ref. 305)	1997
+Pisum	elatius	4.43	Baranyi and Greilhuber, 1996 (Ref. 305)	1997
+Vicia	nana	4.47	Naranjo et al., 1998 (Ref. 415)	2005a
+Heteranthelium	piliferum	4.48	Bennett et al., 1976 (Ref. 108)	1991
+Lathyrus	angulatus	4.48	Evans et al., 1972 (Ref. 7)	1976
+Papaver	dubium	4.50	Bennett and Smith, 1976 (Ref. 2)	1976
+Phalaris	minor	4.50	Kadir, 1974 (Ref. 26)	1976
+Ranunculus	pensylvanicus	4.50	Goepfert, 1974 (Ref. 44)	1976
+Xolantha	guttata	4.50	Boscaiu et al., 2008 (Ref. 567)	2011
+Sorghum	sudanense	4.53	Paroda and Rees, 1971 (Ref. 18)	1976
+Foeniculum	vulgare	4.55	Das and Mallick, 1989 (Ref. 238)	1995
+Zea	luxurians	4.58	Laurie and Bennett, 1985 (Ref. 132)	1991
+Vicia	bithynica	4.58	Chooi WY., 1971 (Ref. 21)	1976
+Lens	esculenta	4.60	Bennett and Smith, 1976 (Ref. 2)	1976
+Oxalis	refracta	4.63	De Azkue and Martínez, 1984 (Ref. 169)	1995
+Vicia	cuspidata	4.63	Maxted et al., 1991 (Ref. 190)	1995
+Aegilops	caudata	4.63	Furuta, 1970 (Ref. 3)	1976
+Aegilops	cylindrica	4.65	Furuta, 1970 (Ref. 3)	1976
+Daucus	blanchei	4.68	Owens, 1974 (Ref. 25)	1976
+Pisum	fulvum	4.70	Baranyi and Greilhuber, 1996 (Ref. 305)	1997
+Bromus	flabellatus	4.70	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Phelipanche	ramosa	4.71	Weiss-Schneeweiss et al., 2005 (Ref. 531)	2011
+Taeniatherum	crititum	4.73	Bennett and Smith, 1987 (Ref. 164)	1995
+Avena	brevis	4.73	Bennett and Smith, 1976 (Ref. 2)	1976
+Avena	pilosa	4.73	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	neglecta	4.73	Chooi WY., 1971 (Ref. 21)	1976
+Pisum	abyssinicum	4.73	Baranyi and Greilhuber, 1996 (Ref. 305)	1997
+Vicia	pampicola	4.74	Naranjo et al., 1998 (Ref. 415)	2005a
+Lathyrus	amphicarpos	4.75	Bennett and Smith, 1976 (Ref. 2)	1976
+Senecio	hispidulus	4.78	Lawrence, 1985 (Ref. 114)	1991
+Senecio	glomeratus	4.80	Lawrence, 1985 (Ref. 114)	1991
+Helianthus	exilis	4.80	Sims and Price, 1985 (Ref. 116)	1991
+Sorghum	caudatum	4.80	Paroda and Rees, 1971 (Ref. 18)	1976
+Avena	abyssinica	4.80	Bennett and Smith, 1976 (Ref. 2)	1976
+Anthemis	austriaca	4.83	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Bromus	rubens	4.85	Bennett and Smith, 1976 (Ref. 2)	1976
+Bromus	scoparius	4.85	Bennett and Smith, 1976 (Ref. 2)	1976
+Celosia	whiteii	4.85	Nath et al., 1992 (Ref. 249)	1995
+Pisum	sativum	4.88	Bennett and Smith, 1976 (Ref. 2)	1976
+Bromus	madritensis	4.88	Bennett and Smith, 1976 (Ref. 2)	1976
+Senecio	minimus	4.93	Lawrence, 1985 (Ref. 114)	1991
+Triticum	urartu	4.93	Bennett and Smith, 1976 (Ref. 2)	1976
+Lathyrus	ciliolatus	4.93	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Senecio	squarrosus	4.95	Lawrence, 1985 (Ref. 114)	1991
+Nicotiana	stocktonii	5.00	Leitch et al., 2008 (Ref. 566)	2011
+Hordeum	hystrix	5.03	Eilam et al., 2007 (Ref. 605)	2011
+Nicotiana	nesophila	5.03	Leitch et al., 2008 (Ref. 566)	2011
+Aegilops	umbellulata	5.05	Furuta, 1970 (Ref. 3)	1976
+Sorghum	caffrorum	5.08	Paroda and Rees, 1971 (Ref. 18)	1976
+Vicia	alpestris	5.08	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Lathyrus	basalticus	5.10	Nandini et al., 1997 (Ref. 319)	2000
+Aegilops	squarrosa	5.10	Rees and Walters, 1965 (Ref. 4)	1976
+Avena	wiestii	5.13	Bullen and Rees, 1972 (Ref. 34)	1976
+Milium	montianum	5.15	Bennett and Thomas, 1991 (Ref. 197)	1995
+Aegilops	speltoides	5.15	Furuta et al., 1986 (Ref. 265)	1995
+Chamaemelum	fuscatum	5.15	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Ranunculus	falcatus	5.15	Smith and Bennett, 1975 (Ref. 45)	1976
+Typhonium	cuspidatum	5.17	Ghosh et al., 2001 (Ref. 411)	2005a
+Lathyrus	setifolius	5.18	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	graminea	5.18	Chooi WY., 1971 (Ref. 21)	1976
+Nicotiana	tabacum	5.18	Leitch et al., 2008 (Ref. 566)	2011
+Lathyrus	inconspicuus	5.20	Bennett and Smith, 1976 (Ref. 2)	1976
+Anacyclus	clavatus	5.25	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Avena	clauda	5.28	Iiyama and Grant, 1972 (Ref. 35)	1976
+Neopallasia	pectinata	5.28	Garcia et al., 2004 (Ref. 521)	2011
+Nicotiana	rustica	5.30	Leitch et al., 2008 (Ref. 566)	2011
+Avena	longiglumis	5.33	Bennett and Smith, 1976 (Ref. 2)	1976
+Haynaldia	villosa	5.35	Bennett, 1972 (Ref. 1)	1976
+Helianthus	paradoxus	5.35	Sims and Price, 1985 (Ref. 116)	1991
+Sorghum	nervosum	5.35	Paroda and Rees, 1971 (Ref. 18)	1976
+Aira	multiculmis	5.35	Albers, 1980 (Ref. 73)	1982
+Briza	humilis	5.38	Murray, 1984 (Ref. 204)	1995
+Apera	spica-venti	5.40	Bennett et al., 1998 (Ref. 375)	2000
+Crepis	pulchra	5.40	Brown and Jone, 1975 (Ref. 42)	1976
+Hordeum	geniculatum	5.40	Bennett and Smith, 1971 (Ref. 50)	1976
+Nicotiana	repanda	5.44	Leitch et al., 2008 (Ref. 566)	2011
+Daucus	montanus	5.48	Owens, 1974 (Ref. 25)	1976
+Avena	ventricosa	5.48	Iiyama and Grant, 1972 (Ref. 35)	1976
+Eremopyrum	triticeum	5.50	Bennett, 1972 (Ref. 1)	1976
+Vicia	cappadocica	5.50	Maxted et al., 1991 (Ref. 190)	1995
+Bromus	japonicus	5.50	Bennett and Smith, 1976 (Ref. 2)	1976
+Hordeum	glaucum	5.50	Bennett and Smith, 1971 (Ref. 50)	1976
+Hordeum	marinum	5.50	Bennett and Smith, 1971 (Ref. 50)	1976
+Hordeum	spontaneum	5.50	Bennett and Smith, 1971 (Ref. 50)	1976
+Caladium	bicolor	5.52	Ghosh et al., 2001 (Ref. 411)	2005a
+Hordeum	pusillum	5.53	Bennett and Smith, 1971 (Ref. 50)	1976
+Sorghum	conspicuum	5.55	Paroda and Rees, 1971 (Ref. 18)	1976
+Hordeum	vulgare	5.55	Bennett and Smith, 1976 (Ref. 2)	1976
+Hordeum	murinum	5.55	Bennett and Smith, 1971 (Ref. 50)	1976
+Cenchrus	caliculatus	5.56	Murray et al., 2005 (Ref. 528)	2011
+Oxalis	niederleinii	5.58	De Azkue and Martínez, 1984 (Ref. 169)	1995
+Helianthus	anomalus	5.60	Sims and Price, 1985 (Ref. 116)	1991
+Bromus	aegyptiacus	5.65	Bennett and Smith, 1976 (Ref. 2)	1976
+Ranunculus	ophioglossifolius	5.65	Goepfert, 1974 (Ref. 44)	1976
+Sorghum	durra	5.70	Paroda and Rees, 1971 (Ref. 18)	1976
+Anacyclus	valentinus	5.70	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Bromus	brachystachys	5.73	Bennett and Smith, 1976 (Ref. 2)	1976
+Helianthus	deserticola	5.75	Sims and Price, 1985 (Ref. 116)	1991
+Bromus	squarrosus	5.75	Bennett and Smith, 1976 (Ref. 2)	1976
+Lathyrus	gorgoni	5.75	Nandini et al., 1997 (Ref. 319)	2000
+Alopecurus	utriculatus	5.83	Bennett and Smith, 1987 (Ref. 164)	1995
+Bromus	alopecuros	5.88	Bennett and Smith, 1976 (Ref. 2)	1976
+Aegilops	searsii	5.90	Furuta et al., 1986 (Ref. 265)	1995
+Bromus	brizaeformis	5.93	Bennett and Smith, 1976 (Ref. 2)	1976
+Nicotiana	debneyi	6.00	Narayan, 1987 (Ref. 199)	1995
+Lathyrus	clymenum	6.00	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	articulata	6.03	Chooi WY., 1971 (Ref. 21)	1976
+Lathyrus	armenius	6.03	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Aira	caryophyllea	6.03	Albers, 1980 (Ref. 73)	1982
+Aegilops	longissima	6.05	Furuta et al., 1986 (Ref. 265)	1995
+Lathyrus	pseudo-cicera	6.05	Nandini et al., 1997 (Ref. 319)	2000
+Lathyrus	articulatus	6.08	Narayan, 1982 (Ref. 113)	1991
+Lathyrus	incurvus	6.08	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Crepis	dioscoridis	6.13	Brown and Jone, 1975 (Ref. 42)	1976
+Ranunculus	arvensis	6.13	Smith and Bennett, 1975 (Ref. 45)	1976
+Aegilops	comosa	6.18	Furuta, 1970 (Ref. 3)	1976
+Triticum	monococcum	6.23	Bennett and Smith, 1976 (Ref. 2)	1976
+Erechtites	valerianaefolia	6.25	Lawrence, 1985 (Ref. 114)	1991
+Bromus	arvensis	6.25	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	meyeri	6.25	Chooi WY., 1971 (Ref. 21)	1976
+Ranunculus	parviflorus	6.25	Goepfert, 1974 (Ref. 44)	1976
+Bromus	berteroanus	6.26	Klos et al., 2009 (Ref. 635)	2012
+Crepis	palaestina	6.28	Brown and Jone, 1975 (Ref. 42)	1976
+Aegilops	mutica	6.30	Furuta, 1970 (Ref. 3)	1976
+Aegilops	uniaristata	6.30	Furuta, 1970 (Ref. 3)	1976
+Senecio	biserratus	6.33	Lawrence, 1985 (Ref. 114)	1991
+Bromus	danthoniae	6.33	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Nicotiana	suaveolens	6.38	Narayan, 1987 (Ref. 199)	1995
+Lathyrus	nissolia	6.45	Narayan, 1982 (Ref. 113)	1991
+Briza	maxima	6.48	Schifino and Winge, 1983 (Ref. 117)	1991
+Lathyrus	chloranthus	6.50	Nandini et al., 1997 (Ref. 319)	2000
+Vicia	galilaea	6.52	Cremonini et al., 1992 (Ref. 408)	2005a
+Lathyrus	hirticarpus	6.55	Nandini et al., 1997 (Ref. 319)	2000
+Vicia	assyriaca	6.58	Maxted et al., 1991 (Ref. 190)	1995
+Typhonium	trilobatum	6.59	Ghosh et al., 2001 (Ref. 411)	2005a
+Vicia	tigridis	6.60	Maxted et al., 1991 (Ref. 190)	1995
+Bromus	caroli-henrici	6.63	Bennett and Smith, 1987 (Ref. 164)	1995
+Lathyrus	blepharicarpus	6.65	Nandini et al., 1997 (Ref. 319)	2000
+Pyrrhopappus	multicaulis	6.65	Price and Bachmann, 1976 (Ref. 70)	1982
+Papaver	setigerum	6.68	Srivastava and Lavania, 1991 (Ref. 167)	1995
+Lachnagrostis	littoralis	6.74	Murray et al., 2005 (Ref. 528)	2011
+Vicia	pannonica	6.75	Raina and Rees, 1983 (Ref. 112)	1991
+Ranunculus	revelieri	6.75	D'Ovidio and Marchi, 1990 (Ref. 196)	1995
+Vicia	hyrcanica	6.75	Chooi WY., 1971 (Ref. 21)	1976
+Ranunculus	marginatus	6.75	Goepfert, 1974 (Ref. 44)	1976
+Vicia	hybrida	6.78	Martin and Shanks, 1966 (Ref. 19)	1976
+Lathyrus	ochrus	6.83	Narayan, 1982 (Ref. 113)	1991
+Lathyrus	sphaericus	6.85	Rees and Hazarika, 1969 (Ref. 15)	1976
+Lathyrus	aphaca	6.90	Rees and Hazarika, 1969 (Ref. 15)	1976
+Vicia	dionysiensis	6.90	Maxted et al., 1991 (Ref. 190)	1995
+Triticum	aegilopoides	6.90	Rees and Walters, 1965 (Ref. 4)	1976
+Lathyrus	cicera	7.00	Rees and Hazarika, 1969 (Ref. 15)	1976
+Lathyrus	hierosolymitanus	7.00	Nandini et al., 1997 (Ref. 319)	2000
+Aegilops	sharonensis	7.05	Furuta et al., 1986 (Ref. 265)	1995
+Aegilops	bicornis	7.13	Rees and Walters, 1965 (Ref. 4)	1976
+Lathyrus	annuus	7.23	Rees and Hazarika, 1969 (Ref. 15)	1976
+Secale	fragile	7.23	Bennett and Smith, 1976 (Ref. 2)	1976
+Leucanthemum	myconis	7.23	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Vicia	narbonensis	7.28	Chooi WY., 1971 (Ref. 21)	1976
+Chrysanthemum	segetum	7.35	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Vicia	lutea	7.40	Chooi WY., 1971 (Ref. 21)	1976
+Vicia	hajastana	7.50	Chooi WY., 1971 (Ref. 21)	1976
+Lathyrus	cassius	7.53	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Lathyrus	spathulatus	7.58	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Lathyrus	belinensis	7.65	Nandini et al., 1997 (Ref. 319)	2000
+Artemisia	leucodes	7.70	Garcia et al., 2004 (Ref. 521)	2011
+Vicia	mollis	7.70	Maxted et al., 1991 (Ref. 190)	1995
+Bromus	oxyodon	7.75	Bennett and Smith, 1976 (Ref. 2)	1976
+Hordeum	depressum	7.76	Jakob et al., 2004 (Ref. 491)	2011
+Lathyrus	odoratus	7.78	Murray et al., 1992 (Ref. 211)	1995
+Leucanthemum	multicaule	7.78	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Vicia	serratifolia	7.83	Raina and Rees, 1983 (Ref. 112)	1991
+Bromus	lepidus	7.85	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	hyaeniscyamus	7.90	Maxted et al., 1991 (Ref. 190)	1995
+Anthemis	cota	7.90	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Bromus	adoensis	8.05	Bennett and Smith, 1976 (Ref. 2)	1976
+Secale	vavilovii	8.23	Bennett and Smith, 1976 (Ref. 2)	1976
+Senecio	velleioides	8.28	Lawrence, 1985 (Ref. 114)	1991
+Secale	cereale	8.28	Bennett and Smith, 1976 (Ref. 2)	1976
+Lathyrus	digitatus	8.28	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Vicia	michauxii	8.30	Chooi WY., 1971 (Ref. 21)	1976
+Lathyrus	sativus	8.40	Narayan, 1982 (Ref. 113)	1991
+Bromus	interruptus	8.43	Bennett and Smith, 1976 (Ref. 2)	1976
+Anacyclus	radiatus	8.45	Nagl and Ehrendorfer, 1974 (Ref. 32)	1976
+Siebera	pungens	8.49	Garnatje et al., 2004 (Ref. 502)	2011
+Avena	vaviloviana	8.50	Bullen and Rees, 1972 (Ref. 34)	1976
+Bromus	rigidus	8.60	Bennett and Smith, 1976 (Ref. 2)	1976
+Bulbine	alata	8.63	Watson, 1981 (Ref. 128)	1991
+Ranunculus	trilobus	8.70	Goepfert, 1974 (Ref. 44)	1976
+Arrhenechtites	mixta	8.78	Lawrence, 1985 (Ref. 114)	1991
+Vicia	eristalioides	8.78	Maxted et al., 1991 (Ref. 190)	1995
+Chrysanthemum	viscidehirtum	8.80	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Bulbine	semibarbata	8.88	Bennett and Smith, 1976 (Ref. 2)	1976
+Avena	barbata	8.93	Bennett and Smith, 1976 (Ref. 2)	1976
+Avena	abyssinica	8.95	Bullen and Rees, 1972 (Ref. 34)	1976
+Lathyrus	tingitanus	9.05	Evans et al., 1972 (Ref. 7)	1976
+Parapholis	incurva	9.08	Bennett and Smith, 1987 (Ref. 164)	1995
+Vicia	kalakhensis	9.18	Maxted et al., 1991 (Ref. 190)	1995
+Bromus	hordeaceus	9.18	Bennett and Smith, 1976 (Ref. 2)	1976
+Aegilops	ovata	9.23	Furuta, 1970 (Ref. 3)	1976
+Avena	magna	9.30	Bennett and Smith, 1976 (Ref. 2)	1976
+Eranthis	hyemalis	9.30	Bennett and Smith, 1976 (Ref. 2)	1976
+Aegilops	triuncialis	9.45	Furuta, 1970 (Ref. 3)	1976
+Vicia	peregrina	9.48	Chooi WY., 1971 (Ref. 21)	1976
+Lathyrus	laxiflorus	9.58	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Aegilops	ventricosa	9.80	Furuta, 1970 (Ref. 3)	1976
+Hordeum	marinum	9.82	Jakob et al., 2004 (Ref. 491)	2011
+Ranunculus	fontanus	9.85	D'Ovidio and Marchi, 1990 (Ref. 196)	1995
+Lathyrus	hirsutus	9.98	Narayan, 1982 (Ref. 113)	1991
+Vicia	melanops	10.00	Raina and Rees, 1983 (Ref. 112)	1991
+Triticum	araraticum	10.05	Hülgenhof et al., 1988 (Ref. 259)	1995
+Caladium	bicolor	10.13	Ghosh et al., 2001 (Ref. 411)	2005a
+Aegilops	geniculata	10.29	Eilam et al., 2008 (Ref. 604)	2011
+Chrysanthemum	carinatum	10.43	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	1982
+Aegilops	crassa	10.48	Furuta, 1970 (Ref. 3)	1976
+Aegilops	columnaris	10.50	Furuta, 1970 (Ref. 3)	1976
+Lathyrus	chrysanthus	10.53	Callimassia and Bennett, 1992 (Ref. 269-H)	1995
+Nigella	damascena	10.55	Evans et al., 1972 (Ref. 7)	1976
+Nigella	sativa	10.63	Bennett and Smith, 1976 (Ref. 2)	1976
+Aegilops	neglecta	10.64	Eilam et al., 2008 (Ref. 604)	2011
+Hordeum	glaucum	10.65	Bennett et al., 1998 (Ref. 375)	2000
+Senecio	vagus	10.73	Lawrence, 1985 (Ref. 114)	1991
+Hordeum	geniculatum	10.78	Bennett and Smith, 1971 (Ref. 50)	1976
+Bromus	commutatus	10.88	Bennett and Smith, 1976 (Ref. 2)	1976
+Hordeum	leporinum	10.88	Bennett and Smith, 1971 (Ref. 50)	1976
+Hordeum	murinum	11.10	Bennett and Smith, 1971 (Ref. 50)	1976
+Aegilops	biuncialis	11.30	Furuta, 1970 (Ref. 3)	1976
+Triticum	timopheevii	11.30	Rees and Walters, 1965 (Ref. 4)	1976
+Ranunculus	muricatus	11.60	Smith and Bennett, 1975 (Ref. 45)	1976
+Bromus	diandrus	11.95	Bennett and Smith, 1976 (Ref. 2)	1976
+Triticum	dicoccum	12.03	Rees and Walters, 1965 (Ref. 4)	1976
+Triticum	turgidum	12.28	Bennett and Smith, 1976 (Ref. 2)	1976
+Triticum	dicoccoides	12.28	Rees and Walters, 1965 (Ref. 4)	1976
+Aegilops	kotschyi	12.30	Furuta, 1975 (Ref. 93)	1982
+Hordeum	arizonicum	12.34	Jakob et al., 2004 (Ref. 491)	2011
+Aegilops	peregrina	12.52	Eilam et al., 2008 (Ref. 604)	2011
+Avena	ludoviciana	12.53	Bennett and Smith, 1976 (Ref. 2)	1976
+Triticum	durum	12.66	Boyko et al., 1984 (Ref. 610)	2011
+Avena	nuda	12.93	Bullen and Rees, 1972 (Ref. 34)	1976
+Helianthus	agrestis	12.95	Sims and Price, 1985 (Ref. 116)	1991
+Bromus	intermedius	12.95	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	noeana	13.08	Maxted et al., 1991 (Ref. 190)	1995
+Avena	sativa	13.23	Bennett and Smith, 1976 (Ref. 2)	1976
+Vicia	faba	13.33	Bennett and Smith, 1976 (Ref. 2)	1976
+Bromus	racemosus	13.48	Bennett and Smith, 1976 (Ref. 2)	1976
+Avena	sterilis	13.65	Bennett and Smith, 1976 (Ref. 2)	1976
+Avena	byzantina	13.70	Bennett and Smith, 1976 (Ref. 2)	1976
+Aegilops	variabilis	13.78	Furuta, 1970 (Ref. 3)	1976
+Bromus	arizonicus	13.80	Klos et al., 2009 (Ref. 635)	2012
+Bromus	grossus	13.93	Bennett and Smith, 1976 (Ref. 2)	1976
+Bromus	secalinus	13.95	Bennett and Smith, 1976 (Ref. 2)	1976
+Avena	fatua	14.15	Bullen and Rees, 1972 (Ref. 34)	1976
+Hordeum	murinum	14.93	Jakob et al., 2004 (Ref. 491)	2011
+Aegilops	triaristata	15.50	Furuta, 1970 (Ref. 3)	1976
+Aegilops	crassa	15.70	Furuta, 1970 (Ref. 3)	1976
+Aegilops	recta	16.22	Eilam et al., 2008 (Ref. 604)	2011
+Hordeum	leporinum	16.40	Bennett and Smith, 1971 (Ref. 50)	1976
+Adonis	annua	16.85	Zonneveld et al., 2005 (Ref. 466)	2005b
+Bulbine	semibarbata	17.00	Watson, 1981 (Ref. 128)	1991
+Triticum	aestivum	17.33	Bennett and Smith, 1976 (Ref. 2)	1976
+Triticum	zhukovskyi	17.74	Eilam et al., 2008 (Ref. 604)	2011
+Aegilops	vavilovii	18.35	Furuta, 1970 (Ref. 3)	1976
+Aegilops	juvenalis	18.80	Furuta, 1970 (Ref. 3)	1976
+Triticale	(hexaploid)	19.80	Hülgenhof et al., 1988 (Ref. 259)	1995
+Bulbine	semibarbata	19.90	Watson, 1981 (Ref. 128)	1991
+Leucanthemella	linearis	20.20	Fujimoto et al., 2005 (Ref. 570)	2011
+Aegilops	triaristata	21.63	Furuta, 1970 (Ref. 3)	1976
+Damasonium	alisma	23.62	Hanson et al., 2002 (Ref. 465)	2005a
+Triticale	(octoploid)	25.98	Bennett, 1972 (Ref. 1)	1976
+Vicia	faba	27.40	Bennett MD, Smith JB, Heslop-Harrison, 1982 (Ref. 55)	
