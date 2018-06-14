@@ -2,7 +2,7 @@ Seed size and diversification
 =============================
 ![alt text](caption.png)
 
-R code for the manuscript "Seed size and its rate of evolution correlate with species diversification across angiosperms" by Javier Igea, Eleanor F. Miller, Alexander S.T. Papadopulos and Andrew J. Tanentzap. [biorxiv] (http://dx.doi.org/10.1101/053116)
+R code for the manuscript "Seed size and its rate of evolution correlate with species diversification across angiosperms" by Javier Igea, Eleanor F. Miller, Alexander S.T. Papadopulos and Andrew J. Tanentzap. [PlosBiology] (https://doi.org/10.1371/journal.pbio.2002792)
 
 This repository contains the scripts and the raw data required to perform the analyses and generate crude versions of the plots in the manuscript. 
 
