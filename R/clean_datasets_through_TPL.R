@@ -221,8 +221,8 @@ run_kewSID_through_TPL<-function(traitfile){
 ##output to ./output/tables/lifecycle_dataset_TPL.txt
 #######
 run_lifecycle_through_TPL<-function(annualfile,perennialfile){
-  annual<-read.tabler(annualfile,sep='\t',header=T)
-  perennial<-read.tabler(perennialfile,sep='\t',header=T)
+  annual<-read.table(annualfile,sep='\t',header=T)
+  perennial<-read.table(perennialfile,sep='\t',header=T)
   lifecycle.table<-rbind(annual,perennial)
   #remove duplicates
   lifecycle.table<-unique(lifecycle.table)
